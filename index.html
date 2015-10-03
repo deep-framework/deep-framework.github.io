@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEEP Framework API Docs</title>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = process;
+        xhr.open("GET", "libs.json", true);
+        xhr.send();
+
+        function process() {
+            if (xhr.readyState == 4) {
+                var list = document.getElementById('libs');
+                var libs = JSON.parse(xhr.responseText);
+                var libsKeys = Object.keys(libs);
+
+                for (var i = 0; i < libsKeys.length; i++) {
+                    var libDir = libsKeys[i];
+                    var libName = libs[libDir];
+
+                    var item = document.createElement('li');
+                    var link = document.createElement('a');
+
+                    link.textContent = libName;
+                    link.href = libDir + '/index.html';
+
+                    item.appendChild(link);
+                    list.appendChild(item);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>DEEP Framework libraries API documentation</h1>
+
+<ul id="libs">
+</ul>
+</body>
+</html>

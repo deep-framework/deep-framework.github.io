@@ -7,7 +7,12 @@ if [ -z $1 ]; then
   exit 1
 fi
 
-cp -R $(cd $1; pwd -P)/ ${path}
+for lib in $(cd $1; pwd -P)/*; do
+  docs_local=${path}/$(basename ${lib})
+
+  rm -rf ${docs_local}
+  cp -R ${lib} ${path}/
+done
 
 libs_file=${path}/libs.json
 badge_tpl_file=${path}/badge.svg.tpl

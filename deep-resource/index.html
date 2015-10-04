@@ -50,10 +50,10 @@
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="deep-resource">deep-resource</h1>
 <p><a href="https://npmjs.org/package/deep-resource"><img src="https://img.shields.io/npm/v/deep-resource.svg" alt="NPM Version"></a>
-<a href="https://magnum.travis-ci.com/MitocGroup/deep"><img src="https://magnum.travis-ci.com/MitocGroup/deep.svg?token=K6deyi9kwkfxRyXwcv6c&amp;branch=dev" alt="Build Status"></a>
-<a href="https://coveralls.io/github/MitocGroup/deep"><img src="https://coveralls.io/repos/MitocGroup/deep/badge.svg?branch=dev&amp;service=github&amp;t=3QEkFa" alt="Coverage Status"></a>
+<a href="https://magnum.travis-ci.com/MitocGroup/deep"><img src="https://magnum.travis-ci.com/MitocGroup/deep.svg?token=K6deyi9kwkfxRyXwcv6c" alt="Build Status"></a>
+<a href="https://coveralls.io/github/MitocGroup/deep"><img src="https://coveralls.io/repos/MitocGroup/deep/badge.svg?service=github&amp;t=3QEkFa" alt="Coverage Status"></a>
 <a href="https://www.codacy.com/app/MitocGroup/deep/dashboard"><img src="https://api.codacy.com/project/badge/46841776f9044f018f0a71b3e114299d" alt="Codacy Badge"></a>
-<a href="http://docs.deep.mg"><img src="http://docs.deep.mg/badge.svg" alt="API Docs"></a></p>
+<a href="http://docs.deep.mg/deep-resource/"><img src="http://docs.deep.mg/deep-resource/badge.svg" alt="API Docs"></a></p>
 <p><a href="https://www.npmjs.com/package/deep-resource">deep-resource</a> is a node.js library, part of <a href="https://github.com/MitocGroup/deep">DEEP Framework</a>.</p>
 <p><img src="https://github.com/MitocGroup/deep/blob/master/docs/deep-ecosystem.png" alt="Digital Enterprise End-to-end Platform, aka DEEP"></p>
 <p>Digital Enterprise End-to-end Platform (also known as DEEP) is low cost and low maintenance digital platform powered by abstracted services from AWS. We enable businesses and developers to achieve more by doing less.</p>
@@ -82,7 +82,7 @@
 <li>Monetize their work of art by uploading microservices to <a href="https://www.deep.mg">DEEP Marketplace</a></li>
 </ul>
 <blockquote>
-<p><a href="https://github.com/MitocGroup/deep/blob/master/docs/microservice.md">DEEP Microservice</a> is the predefined structure of a microservice (an application) in DEEP. There is clear separation between frontend, backend and database, as well as unit tests and documentation. Developers are encouraged to try out our <a href="https://github.com/MitocGroup/deep-microservices-helloworld">DEEP Microservices HelloWorld</a> example to get started, as well as <a href="https://github.com/MitocGroup/deep-package-manager">DEEP Package Manager</a> called <a href="https://github.com/MitocGroup/deepify"><code>deepify</code></a>.</p>
+<p><a href="https://github.com/MitocGroup/deep/blob/master/docs/microservice.md">DEEP Microservice</a> is the predefined structure of a microservice (an application) in DEEP. There is clear separation between frontend, backend and database, as well as unit tests and documentation. Developers are encoraged to get started with <a href="https://github.com/MitocGroup/deep-microservices-helloworld">DEEP Microservices HelloWorld</a> or <a href="https://github.com/MitocGroup/deep-microservices-todo-app">DEEP Microservices ToDo App</a>, as well as DEEP Development Tools called <a href="https://www.npmjs.com/package/deepify"><code>deepify</code></a>.</p>
 <p><a href="https://www.deep.mg">DEEP Marketplace</a> (aka <a href="https://www.deep.mg">www.deep.mg</a>) is a web application built using DEEP and published on serverless environment from <a href="https://aws.amazon.com">Amazon Web Services</a> (aka <a href="https://aws.amazon.com">aws.amazon.com</a>). We make it faster and easier for developers to build and publish their software, as well as for businesses to discover and test applications they are looking for. Our goal is to connect businesses with developers, and empower technical teams to build self-service software that none technical teams could use. The marketplace is like Apple&apos;s App Store or Google&apos;s Play for web applications that run natively on cloud providers like AWS.</p>
 </blockquote>
 <h2 id="deep-architecture-on-aws">DEEP Architecture on AWS</h2>
@@ -100,67 +100,67 @@
 <tr>
 <td>deep-asset</td>
 <td>Assets Management Library</td>
-<td>TBU</td>
+<td>Amazon S3</td>
 </tr>
 <tr>
 <td>deep-cache</td>
 <td>Cache Management Library</td>
-<td>TBU</td>
+<td>Amazon ElastiCache</td>
 </tr>
 <tr>
 <td>deep-core</td>
 <td>Core Management Library</td>
-<td>TBU</td>
+<td>-</td>
 </tr>
 <tr>
 <td>deep-db</td>
 <td>Database Management Library</td>
-<td>TBU</td>
+<td>Amazon DynamoDB, Amazon SQS</td>
 </tr>
 <tr>
 <td>deep-di</td>
 <td>Dependency Injection Management Library</td>
-<td>TBU</td>
+<td>-</td>
 </tr>
 <tr>
 <td>deep-event</td>
 <td>Events Management Library</td>
-<td>TBU</td>
+<td>Amazon Kinesis</td>
 </tr>
 <tr>
 <td>deep-fs</td>
 <td>File System Management Library</td>
-<td>TBU</td>
+<td>Amazon S3</td>
 </tr>
 <tr>
 <td>deep-kernel</td>
 <td>Kernel Management Library</td>
-<td>TBU</td>
+<td>-</td>
 </tr>
 <tr>
 <td>deep-log</td>
 <td>Logs Management Library</td>
-<td>TBU</td>
+<td>Amazon CloudWatch Logs</td>
 </tr>
 <tr>
 <td>deep-notification</td>
 <td>Notifications Management Library</td>
-<td>TBU</td>
+<td>Amazon SNS</td>
 </tr>
 <tr>
 <td>deep-resource</td>
 <td>Resouces Management Library</td>
-<td>TBU</td>
+<td>AWS Lambda, Amazon API Gateway</td>
 </tr>
 <tr>
 <td>deep-security</td>
 <td>Security Management Library</td>
-<td>TBU</td>
+<td>AWS IAM, Amazon Cognito</td>
 </tr>
 <tr>
 <td>deep-validation</td>
 <td>Validation Management Library</td>
-<td>TBU</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>

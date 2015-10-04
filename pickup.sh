@@ -7,7 +7,7 @@ if [ -z $1 ]; then
   exit 1
 fi
 
-cp -R $1 ${path}
+cp -R $(cd $1; pwd -P)/ ${path}
 
 libs_file=${path}/libs.json
 badge_tpl_file=${path}/badge.svg.tpl

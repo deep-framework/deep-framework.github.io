@@ -1,110 +1,110 @@
 window.esdocSearchIndex = [
   [
-    "./lib/local/driver/abstractdriver.js~abstractdriver",
+    "deep-db/lib/local/driver/abstractdriver.js~abstractdriver",
     "class/lib/Local/Driver/AbstractDriver.js~AbstractDriver.html",
-    "<span>AbstractDriver</span> <span class=\"search-result-import-path\">./lib/Local/Driver/AbstractDriver.js</span>",
+    "<span>AbstractDriver</span> <span class=\"search-result-import-path\">deep-db/lib/Local/Driver/AbstractDriver.js</span>",
     "class"
   ],
   [
-    "./lib/db.js~db",
+    "deep-db/lib/db.js~db",
     "class/lib/DB.js~DB.html",
-    "<span>DB</span> <span class=\"search-result-import-path\">./lib/DB.js</span>",
+    "<span>DB</span> <span class=\"search-result-import-path\">deep-db/lib/DB.js</span>",
     "class"
   ],
   [
-    "./lib/local/dbserver.js~dbserver",
+    "deep-db/lib/local/dbserver.js~dbserver",
     "class/lib/Local/DBServer.js~DBServer.html",
-    "<span>DBServer</span> <span class=\"search-result-import-path\">./lib/Local/DBServer.js</span>",
+    "<span>DBServer</span> <span class=\"search-result-import-path\">deep-db/lib/Local/DBServer.js</span>",
     "class"
   ],
   [
-    "./lib/local/driver/dynalite.js~dynalite",
+    "deep-db/lib/local/driver/dynalite.js~dynalite",
     "class/lib/Local/Driver/Dynalite.js~Dynalite.html",
-    "<span>Dynalite</span> <span class=\"search-result-import-path\">./lib/Local/Driver/Dynalite.js</span>",
+    "<span>Dynalite</span> <span class=\"search-result-import-path\">deep-db/lib/Local/Driver/Dynalite.js</span>",
     "class"
   ],
   [
-    "./lib/exception/exception.js~exception",
+    "deep-db/lib/exception/exception.js~exception",
     "class/lib/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-db/lib/Exception/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/local/driver/exception/exception.js~exception",
+    "deep-db/lib/local/driver/exception/exception.js~exception",
     "class/lib/Local/Driver/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Local/Driver/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-db/lib/Local/Driver/Exception/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/vogels/exceptions/exception.js~exception",
+    "deep-db/lib/vogels/exceptions/exception.js~exception",
     "class/lib/Vogels/Exceptions/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Vogels/Exceptions/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-db/lib/Vogels/Exceptions/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/vogels/extendmodel.js~extendmodel",
+    "deep-db/lib/vogels/extendmodel.js~extendmodel",
     "class/lib/Vogels/ExtendModel.js~ExtendModel.html",
-    "<span>ExtendModel</span> <span class=\"search-result-import-path\">./lib/Vogels/ExtendModel.js</span>",
+    "<span>ExtendModel</span> <span class=\"search-result-import-path\">deep-db/lib/Vogels/ExtendModel.js</span>",
     "class"
   ],
   [
-    "./lib/exception/failedtocreatetableexception.js~failedtocreatetableexception",
+    "deep-db/lib/exception/failedtocreatetableexception.js~failedtocreatetableexception",
     "class/lib/Exception/FailedToCreateTableException.js~FailedToCreateTableException.html",
-    "<span>FailedToCreateTableException</span> <span class=\"search-result-import-path\">./lib/Exception/FailedToCreateTableException.js</span>",
+    "<span>FailedToCreateTableException</span> <span class=\"search-result-import-path\">deep-db/lib/Exception/FailedToCreateTableException.js</span>",
     "class"
   ],
   [
-    "./lib/exception/failedtocreatetablesexception.js~failedtocreatetablesexception",
+    "deep-db/lib/exception/failedtocreatetablesexception.js~failedtocreatetablesexception",
     "class/lib/Exception/FailedToCreateTablesException.js~FailedToCreateTablesException.html",
-    "<span>FailedToCreateTablesException</span> <span class=\"search-result-import-path\">./lib/Exception/FailedToCreateTablesException.js</span>",
+    "<span>FailedToCreateTablesException</span> <span class=\"search-result-import-path\">deep-db/lib/Exception/FailedToCreateTablesException.js</span>",
     "class"
   ],
   [
-    "./lib/local/driver/exception/failedtostartserverexception.js~failedtostartserverexception",
+    "deep-db/lib/local/driver/exception/failedtostartserverexception.js~failedtostartserverexception",
     "class/lib/Local/Driver/Exception/FailedToStartServerException.js~FailedToStartServerException.html",
-    "<span>FailedToStartServerException</span> <span class=\"search-result-import-path\">./lib/Local/Driver/Exception/FailedToStartServerException.js</span>",
+    "<span>FailedToStartServerException</span> <span class=\"search-result-import-path\">deep-db/lib/Local/Driver/Exception/FailedToStartServerException.js</span>",
     "class"
   ],
   [
-    "./lib/vogels/exceptions/invalidargumentexception.js~invalidargumentexception",
+    "deep-db/lib/vogels/exceptions/invalidargumentexception.js~invalidargumentexception",
     "class/lib/Vogels/Exceptions/InvalidArgumentException.js~InvalidArgumentException.html",
-    "<span>InvalidArgumentException</span> <span class=\"search-result-import-path\">./lib/Vogels/Exceptions/InvalidArgumentException.js</span>",
+    "<span>InvalidArgumentException</span> <span class=\"search-result-import-path\">deep-db/lib/Vogels/Exceptions/InvalidArgumentException.js</span>",
     "class"
   ],
   [
-    "./lib/local/driver/localdynamo.js~localdynamo",
+    "deep-db/lib/local/driver/localdynamo.js~localdynamo",
     "class/lib/Local/Driver/LocalDynamo.js~LocalDynamo.html",
-    "<span>LocalDynamo</span> <span class=\"search-result-import-path\">./lib/Local/Driver/LocalDynamo.js</span>",
+    "<span>LocalDynamo</span> <span class=\"search-result-import-path\">deep-db/lib/Local/Driver/LocalDynamo.js</span>",
     "class"
   ],
   [
-    "./lib/exception/modelnotfoundexception.js~modelnotfoundexception",
+    "deep-db/lib/exception/modelnotfoundexception.js~modelnotfoundexception",
     "class/lib/Exception/ModelNotFoundException.js~ModelNotFoundException.html",
-    "<span>ModelNotFoundException</span> <span class=\"search-result-import-path\">./lib/Exception/ModelNotFoundException.js</span>",
+    "<span>ModelNotFoundException</span> <span class=\"search-result-import-path\">deep-db/lib/Exception/ModelNotFoundException.js</span>",
     "class"
   ],
   [
-    "./lib/local/driver/pathawaredriver.js~pathawaredriver",
+    "deep-db/lib/local/driver/pathawaredriver.js~pathawaredriver",
     "class/lib/Local/Driver/PathAwareDriver.js~PathAwareDriver.html",
-    "<span>PathAwareDriver</span> <span class=\"search-result-import-path\">./lib/Local/Driver/PathAwareDriver.js</span>",
+    "<span>PathAwareDriver</span> <span class=\"search-result-import-path\">deep-db/lib/Local/Driver/PathAwareDriver.js</span>",
     "class"
   ],
   [
-    "./lib/local/driver/exception/serveralreadyrunningexception.js~serveralreadyrunningexception",
+    "deep-db/lib/local/driver/exception/serveralreadyrunningexception.js~serveralreadyrunningexception",
     "class/lib/Local/Driver/Exception/ServerAlreadyRunningException.js~ServerAlreadyRunningException.html",
-    "<span>ServerAlreadyRunningException</span> <span class=\"search-result-import-path\">./lib/Local/Driver/Exception/ServerAlreadyRunningException.js</span>",
+    "<span>ServerAlreadyRunningException</span> <span class=\"search-result-import-path\">deep-db/lib/Local/Driver/Exception/ServerAlreadyRunningException.js</span>",
     "class"
   ],
   [
-    "./lib/local/driver/exception/serverttsexceededexception.js~serverttsexceededexception",
+    "deep-db/lib/local/driver/exception/serverttsexceededexception.js~serverttsexceededexception",
     "class/lib/Local/Driver/Exception/ServerTtsExceededException.js~ServerTtsExceededException.html",
-    "<span>ServerTtsExceededException</span> <span class=\"search-result-import-path\">./lib/Local/Driver/Exception/ServerTtsExceededException.js</span>",
+    "<span>ServerTtsExceededException</span> <span class=\"search-result-import-path\">deep-db/lib/Local/Driver/Exception/ServerTtsExceededException.js</span>",
     "class"
   ],
   [
-    "./lib/vogels/exceptions/undefinedmethodexception.js~undefinedmethodexception",
+    "deep-db/lib/vogels/exceptions/undefinedmethodexception.js~undefinedmethodexception",
     "class/lib/Vogels/Exceptions/UndefinedMethodException.js~UndefinedMethodException.html",
-    "<span>UndefinedMethodException</span> <span class=\"search-result-import-path\">./lib/Vogels/Exceptions/UndefinedMethodException.js</span>",
+    "<span>UndefinedMethodException</span> <span class=\"search-result-import-path\">deep-db/lib/Vogels/Exceptions/UndefinedMethodException.js</span>",
     "class"
   ],
   [

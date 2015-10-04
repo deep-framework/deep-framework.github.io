@@ -1,8 +1,8 @@
 window.esdocSearchIndex = [
   [
-    "./lib/exception/exception.js~exception",
+    "deep-event/lib/exception/exception.js~exception",
     "class/lib/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-event/lib/Exception/Exception.js</span>",
     "class"
   ],
   [

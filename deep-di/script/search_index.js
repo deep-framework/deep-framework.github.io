@@ -1,20 +1,20 @@
 window.esdocSearchIndex = [
   [
-    "./lib/di.js~di",
+    "deep-di/lib/di.js~di",
     "class/lib/DI.js~DI.html",
-    "<span>DI</span> <span class=\"search-result-import-path\">./lib/DI.js</span>",
+    "<span>DI</span> <span class=\"search-result-import-path\">deep-di/lib/DI.js</span>",
     "class"
   ],
   [
-    "./lib/exception/exception.js~exception",
+    "deep-di/lib/exception/exception.js~exception",
     "class/lib/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-di/lib/Exception/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/exception/missingserviceexception.js~missingserviceexception",
+    "deep-di/lib/exception/missingserviceexception.js~missingserviceexception",
     "class/lib/Exception/MissingServiceException.js~MissingServiceException.html",
-    "<span>MissingServiceException</span> <span class=\"search-result-import-path\">./lib/Exception/MissingServiceException.js</span>",
+    "<span>MissingServiceException</span> <span class=\"search-result-import-path\">deep-di/lib/Exception/MissingServiceException.js</span>",
     "class"
   ],
   [

@@ -1,38 +1,38 @@
 window.esdocSearchIndex = [
   [
-    "./lib/driver/abstractdriver.js~abstractdriver",
+    "deep-log/lib/driver/abstractdriver.js~abstractdriver",
     "class/lib/Driver/AbstractDriver.js~AbstractDriver.html",
-    "<span>AbstractDriver</span> <span class=\"search-result-import-path\">./lib/Driver/AbstractDriver.js</span>",
+    "<span>AbstractDriver</span> <span class=\"search-result-import-path\">deep-log/lib/Driver/AbstractDriver.js</span>",
     "class"
   ],
   [
-    "./lib/driver/consoledriver.js~consoledriver",
+    "deep-log/lib/driver/consoledriver.js~consoledriver",
     "class/lib/Driver/ConsoleDriver.js~ConsoleDriver.html",
-    "<span>ConsoleDriver</span> <span class=\"search-result-import-path\">./lib/Driver/ConsoleDriver.js</span>",
+    "<span>ConsoleDriver</span> <span class=\"search-result-import-path\">deep-log/lib/Driver/ConsoleDriver.js</span>",
     "class"
   ],
   [
-    "./lib/exception/exception.js~exception",
+    "deep-log/lib/exception/exception.js~exception",
     "class/lib/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-log/lib/Exception/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/log.js~log",
+    "deep-log/lib/log.js~log",
     "class/lib/Log.js~Log.html",
-    "<span>Log</span> <span class=\"search-result-import-path\">./lib/Log.js</span>",
+    "<span>Log</span> <span class=\"search-result-import-path\">deep-log/lib/Log.js</span>",
     "class"
   ],
   [
-    "./lib/driver/ravenbrowserdriver.js~ravenbrowserdriver",
+    "deep-log/lib/driver/ravenbrowserdriver.js~ravenbrowserdriver",
     "class/lib/Driver/RavenBrowserDriver.js~RavenBrowserDriver.html",
-    "<span>RavenBrowserDriver</span> <span class=\"search-result-import-path\">./lib/Driver/RavenBrowserDriver.js</span>",
+    "<span>RavenBrowserDriver</span> <span class=\"search-result-import-path\">deep-log/lib/Driver/RavenBrowserDriver.js</span>",
     "class"
   ],
   [
-    "./lib/driver/ravendriver.js~ravendriver",
+    "deep-log/lib/driver/ravendriver.js~ravendriver",
     "class/lib/Driver/RavenDriver.js~RavenDriver.html",
-    "<span>RavenDriver</span> <span class=\"search-result-import-path\">./lib/Driver/RavenDriver.js</span>",
+    "<span>RavenDriver</span> <span class=\"search-result-import-path\">deep-log/lib/Driver/RavenDriver.js</span>",
     "class"
   ],
   [

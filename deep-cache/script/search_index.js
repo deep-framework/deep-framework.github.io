@@ -1,68 +1,68 @@
 window.esdocSearchIndex = [
   [
-    "./lib/driver/abstractdriver.js~abstractdriver",
+    "deep-cache/lib/driver/abstractdriver.js~abstractdriver",
     "class/lib/Driver/AbstractDriver.js~AbstractDriver.html",
-    "<span>AbstractDriver</span> <span class=\"search-result-import-path\">./lib/Driver/AbstractDriver.js</span>",
+    "<span>AbstractDriver</span> <span class=\"search-result-import-path\">deep-cache/lib/Driver/AbstractDriver.js</span>",
     "class"
   ],
   [
-    "./lib/cache.js~cache",
+    "deep-cache/lib/cache.js~cache",
     "class/lib/Cache.js~Cache.html",
-    "<span>Cache</span> <span class=\"search-result-import-path\">./lib/Cache.js</span>",
+    "<span>Cache</span> <span class=\"search-result-import-path\">deep-cache/lib/Cache.js</span>",
     "class"
   ],
   [
-    "./lib/driver/exception/driverexception.js~driverexception",
+    "deep-cache/lib/driver/exception/driverexception.js~driverexception",
     "class/lib/Driver/Exception/DriverException.js~DriverException.html",
-    "<span>DriverException</span> <span class=\"search-result-import-path\">./lib/Driver/Exception/DriverException.js</span>",
+    "<span>DriverException</span> <span class=\"search-result-import-path\">deep-cache/lib/Driver/Exception/DriverException.js</span>",
     "class"
   ],
   [
-    "./lib/driver/exception/exception.js~exception",
+    "deep-cache/lib/driver/exception/exception.js~exception",
     "class/lib/Driver/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Driver/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-cache/lib/Driver/Exception/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/exception/exception.js~exception",
+    "deep-cache/lib/exception/exception.js~exception",
     "class/lib/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-cache/lib/Exception/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/driver/inmemorydriver.js~inmemorydriver",
+    "deep-cache/lib/driver/inmemorydriver.js~inmemorydriver",
     "class/lib/Driver/InMemoryDriver.js~InMemoryDriver.html",
-    "<span>InMemoryDriver</span> <span class=\"search-result-import-path\">./lib/Driver/InMemoryDriver.js</span>",
+    "<span>InMemoryDriver</span> <span class=\"search-result-import-path\">deep-cache/lib/Driver/InMemoryDriver.js</span>",
     "class"
   ],
   [
-    "./lib/driver/localstoragedriver.js~localstoragedriver",
+    "deep-cache/lib/driver/localstoragedriver.js~localstoragedriver",
     "class/lib/Driver/LocalStorageDriver.js~LocalStorageDriver.html",
-    "<span>LocalStorageDriver</span> <span class=\"search-result-import-path\">./lib/Driver/LocalStorageDriver.js</span>",
+    "<span>LocalStorageDriver</span> <span class=\"search-result-import-path\">deep-cache/lib/Driver/LocalStorageDriver.js</span>",
     "class"
   ],
   [
-    "./lib/driver/exception/missingcacheexception.js~missingcacheexception",
+    "deep-cache/lib/driver/exception/missingcacheexception.js~missingcacheexception",
     "class/lib/Driver/Exception/MissingCacheException.js~MissingCacheException.html",
-    "<span>MissingCacheException</span> <span class=\"search-result-import-path\">./lib/Driver/Exception/MissingCacheException.js</span>",
+    "<span>MissingCacheException</span> <span class=\"search-result-import-path\">deep-cache/lib/Driver/Exception/MissingCacheException.js</span>",
     "class"
   ],
   [
-    "./lib/driver/exception/noflushexception.js~noflushexception",
+    "deep-cache/lib/driver/exception/noflushexception.js~noflushexception",
     "class/lib/Driver/Exception/NoFlushException.js~NoFlushException.html",
-    "<span>NoFlushException</span> <span class=\"search-result-import-path\">./lib/Driver/Exception/NoFlushException.js</span>",
+    "<span>NoFlushException</span> <span class=\"search-result-import-path\">deep-cache/lib/Driver/Exception/NoFlushException.js</span>",
     "class"
   ],
   [
-    "./lib/driver/exception/redisclusterexception.js~redisclusterexception",
+    "deep-cache/lib/driver/exception/redisclusterexception.js~redisclusterexception",
     "class/lib/Driver/Exception/RedisClusterException.js~RedisClusterException.html",
-    "<span>RedisClusterException</span> <span class=\"search-result-import-path\">./lib/Driver/Exception/RedisClusterException.js</span>",
+    "<span>RedisClusterException</span> <span class=\"search-result-import-path\">deep-cache/lib/Driver/Exception/RedisClusterException.js</span>",
     "class"
   ],
   [
-    "./lib/driver/redisdriver.js~redisdriver",
+    "deep-cache/lib/driver/redisdriver.js~redisdriver",
     "class/lib/Driver/RedisDriver.js~RedisDriver.html",
-    "<span>RedisDriver</span> <span class=\"search-result-import-path\">./lib/Driver/RedisDriver.js</span>",
+    "<span>RedisDriver</span> <span class=\"search-result-import-path\">deep-cache/lib/Driver/RedisDriver.js</span>",
     "class"
   ],
   [

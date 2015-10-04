@@ -1,44 +1,44 @@
 window.esdocSearchIndex = [
   [
-    "./lib/containeraware.js~containeraware",
+    "deep-kernel/lib/containeraware.js~containeraware",
     "class/lib/ContainerAware.js~ContainerAware.html",
-    "<span>ContainerAware</span> <span class=\"search-result-import-path\">./lib/ContainerAware.js</span>",
+    "<span>ContainerAware</span> <span class=\"search-result-import-path\">deep-kernel/lib/ContainerAware.js</span>",
     "class"
   ],
   [
-    "./lib/exception/exception.js~exception",
+    "deep-kernel/lib/exception/exception.js~exception",
     "class/lib/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-kernel/lib/Exception/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/microservice/injectable.js~injectable",
+    "deep-kernel/lib/microservice/injectable.js~injectable",
     "class/lib/Microservice/Injectable.js~Injectable.html",
-    "<span>Injectable</span> <span class=\"search-result-import-path\">./lib/Microservice/Injectable.js</span>",
+    "<span>Injectable</span> <span class=\"search-result-import-path\">deep-kernel/lib/Microservice/Injectable.js</span>",
     "class"
   ],
   [
-    "./lib/microservice/instance.js~instance",
+    "deep-kernel/lib/microservice/instance.js~instance",
     "class/lib/Microservice/Instance.js~Instance.html",
-    "<span>Instance</span> <span class=\"search-result-import-path\">./lib/Microservice/Instance.js</span>",
+    "<span>Instance</span> <span class=\"search-result-import-path\">deep-kernel/lib/Microservice/Instance.js</span>",
     "class"
   ],
   [
-    "./lib/kernel.js~kernel",
+    "deep-kernel/lib/kernel.js~kernel",
     "class/lib/Kernel.js~Kernel.html",
-    "<span>Kernel</span> <span class=\"search-result-import-path\">./lib/Kernel.js</span>",
+    "<span>Kernel</span> <span class=\"search-result-import-path\">deep-kernel/lib/Kernel.js</span>",
     "class"
   ],
   [
-    "./lib/exception/missingmicroserviceexception.js~missingmicroserviceexception",
+    "deep-kernel/lib/exception/missingmicroserviceexception.js~missingmicroserviceexception",
     "class/lib/Exception/MissingMicroserviceException.js~MissingMicroserviceException.html",
-    "<span>MissingMicroserviceException</span> <span class=\"search-result-import-path\">./lib/Exception/MissingMicroserviceException.js</span>",
+    "<span>MissingMicroserviceException</span> <span class=\"search-result-import-path\">deep-kernel/lib/Exception/MissingMicroserviceException.js</span>",
     "class"
   ],
   [
-    "./lib/microservice/exception/missingworkingmicroserviceexception.js~missingworkingmicroserviceexception",
+    "deep-kernel/lib/microservice/exception/missingworkingmicroserviceexception.js~missingworkingmicroserviceexception",
     "class/lib/Microservice/Exception/MissingWorkingMicroserviceException.js~MissingWorkingMicroserviceException.html",
-    "<span>MissingWorkingMicroserviceException</span> <span class=\"search-result-import-path\">./lib/Microservice/Exception/MissingWorkingMicroserviceException.js</span>",
+    "<span>MissingWorkingMicroserviceException</span> <span class=\"search-result-import-path\">deep-kernel/lib/Microservice/Exception/MissingWorkingMicroserviceException.js</span>",
     "class"
   ],
   [

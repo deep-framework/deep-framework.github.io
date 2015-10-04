@@ -1,44 +1,44 @@
 window.esdocSearchIndex = [
   [
-    "./lib/exception/exception.js~exception",
+    "deep-validation/lib/exception/exception.js~exception",
     "class/lib/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-validation/lib/Exception/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/exception/invalidschemaexception.js~invalidschemaexception",
+    "deep-validation/lib/exception/invalidschemaexception.js~invalidschemaexception",
     "class/lib/Exception/InvalidSchemaException.js~InvalidSchemaException.html",
-    "<span>InvalidSchemaException</span> <span class=\"search-result-import-path\">./lib/Exception/InvalidSchemaException.js</span>",
+    "<span>InvalidSchemaException</span> <span class=\"search-result-import-path\">deep-validation/lib/Exception/InvalidSchemaException.js</span>",
     "class"
   ],
   [
-    "./lib/helpers/joi.js~joi",
+    "deep-validation/lib/helpers/joi.js~joi",
     "class/lib/Helpers/Joi.js~Joi.html",
-    "<span>Joi</span> <span class=\"search-result-import-path\">./lib/Helpers/Joi.js</span>",
+    "<span>Joi</span> <span class=\"search-result-import-path\">deep-validation/lib/Helpers/Joi.js</span>",
     "class"
   ],
   [
-    "./lib/exception/modelnotfoundexception.js~modelnotfoundexception",
+    "deep-validation/lib/exception/modelnotfoundexception.js~modelnotfoundexception",
     "class/lib/Exception/ModelNotFoundException.js~ModelNotFoundException.html",
-    "<span>ModelNotFoundException</span> <span class=\"search-result-import-path\">./lib/Exception/ModelNotFoundException.js</span>",
+    "<span>ModelNotFoundException</span> <span class=\"search-result-import-path\">deep-validation/lib/Exception/ModelNotFoundException.js</span>",
     "class"
   ],
   [
-    "./lib/objecttojoi.js~objecttojoi",
+    "deep-validation/lib/objecttojoi.js~objecttojoi",
     "class/lib/ObjectToJoi.js~ObjectToJoi.html",
-    "<span>ObjectToJoi</span> <span class=\"search-result-import-path\">./lib/ObjectToJoi.js</span>",
+    "<span>ObjectToJoi</span> <span class=\"search-result-import-path\">deep-validation/lib/ObjectToJoi.js</span>",
     "class"
   ],
   [
-    "./lib/exception/objectvalidationfailedexception.js~objectvalidationfailedexception",
+    "deep-validation/lib/exception/objectvalidationfailedexception.js~objectvalidationfailedexception",
     "class/lib/Exception/ObjectValidationFailedException.js~ObjectValidationFailedException.html",
-    "<span>ObjectValidationFailedException</span> <span class=\"search-result-import-path\">./lib/Exception/ObjectValidationFailedException.js</span>",
+    "<span>ObjectValidationFailedException</span> <span class=\"search-result-import-path\">deep-validation/lib/Exception/ObjectValidationFailedException.js</span>",
     "class"
   ],
   [
-    "./lib/validation.js~validation",
+    "deep-validation/lib/validation.js~validation",
     "class/lib/Validation.js~Validation.html",
-    "<span>Validation</span> <span class=\"search-result-import-path\">./lib/Validation.js</span>",
+    "<span>Validation</span> <span class=\"search-result-import-path\">deep-validation/lib/Validation.js</span>",
     "class"
   ],
   [

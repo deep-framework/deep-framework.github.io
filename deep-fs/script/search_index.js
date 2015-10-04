@@ -1,20 +1,20 @@
 window.esdocSearchIndex = [
   [
-    "./lib/exception/exception.js~exception",
+    "deep-fs/lib/exception/exception.js~exception",
     "class/lib/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-fs/lib/Exception/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/fs.js~fs",
+    "deep-fs/lib/fs.js~fs",
     "class/lib/FS.js~FS.html",
-    "<span>FS</span> <span class=\"search-result-import-path\">./lib/FS.js</span>",
+    "<span>FS</span> <span class=\"search-result-import-path\">deep-fs/lib/FS.js</span>",
     "class"
   ],
   [
-    "./lib/exception/unknownfolderexception.js~unknownfolderexception",
+    "deep-fs/lib/exception/unknownfolderexception.js~unknownfolderexception",
     "class/lib/Exception/UnknownFolderException.js~UnknownFolderException.html",
-    "<span>UnknownFolderException</span> <span class=\"search-result-import-path\">./lib/Exception/UnknownFolderException.js</span>",
+    "<span>UnknownFolderException</span> <span class=\"search-result-import-path\">deep-fs/lib/Exception/UnknownFolderException.js</span>",
     "class"
   ],
   [

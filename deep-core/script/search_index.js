@@ -1,134 +1,134 @@
 window.esdocSearchIndex = [
   [
-    "./lib/aws/iam/action.js~action",
+    "deep-core/lib/aws/iam/action.js~action",
     "class/lib/AWS/IAM/Action.js~Action.html",
-    "<span>Action</span> <span class=\"search-result-import-path\">./lib/AWS/IAM/Action.js</span>",
+    "<span>Action</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/IAM/Action.js</span>",
     "class"
   ],
   [
-    "./lib/aws/iam/collection.js~collection",
+    "deep-core/lib/aws/iam/collection.js~collection",
     "class/lib/AWS/IAM/Collection.js~Collection.html",
-    "<span>Collection</span> <span class=\"search-result-import-path\">./lib/AWS/IAM/Collection.js</span>",
+    "<span>Collection</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/IAM/Collection.js</span>",
     "class"
   ],
   [
-    "./lib/exception/databaseoperationexception.js~databaseoperationexception",
+    "deep-core/lib/exception/databaseoperationexception.js~databaseoperationexception",
     "class/lib/Exception/DatabaseOperationException.js~DatabaseOperationException.html",
-    "<span>DatabaseOperationException</span> <span class=\"search-result-import-path\">./lib/Exception/DatabaseOperationException.js</span>",
+    "<span>DatabaseOperationException</span> <span class=\"search-result-import-path\">deep-core/lib/Exception/DatabaseOperationException.js</span>",
     "class"
   ],
   [
-    "./lib/aws/lambda/errorresponse.js~errorresponse",
+    "deep-core/lib/aws/lambda/errorresponse.js~errorresponse",
     "class/lib/AWS/Lambda/ErrorResponse.js~ErrorResponse.html",
-    "<span>ErrorResponse</span> <span class=\"search-result-import-path\">./lib/AWS/Lambda/ErrorResponse.js</span>",
+    "<span>ErrorResponse</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/Lambda/ErrorResponse.js</span>",
     "class"
   ],
   [
-    "./lib/exception/exception.js~exception",
+    "deep-core/lib/exception/exception.js~exception",
     "class/lib/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-core/lib/Exception/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/aws/iam/extractable.js~extractable",
+    "deep-core/lib/aws/iam/extractable.js~extractable",
     "class/lib/AWS/IAM/Extractable.js~Extractable.html",
-    "<span>Extractable</span> <span class=\"search-result-import-path\">./lib/AWS/IAM/Extractable.js</span>",
+    "<span>Extractable</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/IAM/Extractable.js</span>",
     "class"
   ],
   [
-    "./lib/aws/iam/factory.js~factory",
+    "deep-core/lib/aws/iam/factory.js~factory",
     "class/lib/AWS/IAM/Factory.js~Factory.html",
-    "<span>Factory</span> <span class=\"search-result-import-path\">./lib/AWS/IAM/Factory.js</span>",
+    "<span>Factory</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/IAM/Factory.js</span>",
     "class"
   ],
   [
-    "./lib/oop/interface.js~interface",
+    "deep-core/lib/oop/interface.js~interface",
     "class/lib/OOP/Interface.js~Interface.html",
-    "<span>Interface</span> <span class=\"search-result-import-path\">./lib/OOP/Interface.js</span>",
+    "<span>Interface</span> <span class=\"search-result-import-path\">deep-core/lib/OOP/Interface.js</span>",
     "class"
   ],
   [
-    "./lib/exception/invalidargumentexception.js~invalidargumentexception",
+    "deep-core/lib/exception/invalidargumentexception.js~invalidargumentexception",
     "class/lib/Exception/InvalidArgumentException.js~InvalidArgumentException.html",
-    "<span>InvalidArgumentException</span> <span class=\"search-result-import-path\">./lib/Exception/InvalidArgumentException.js</span>",
+    "<span>InvalidArgumentException</span> <span class=\"search-result-import-path\">deep-core/lib/Exception/InvalidArgumentException.js</span>",
     "class"
   ],
   [
-    "./lib/aws/iam/exception/invalidarnexception.js~invalidarnexception",
+    "deep-core/lib/aws/iam/exception/invalidarnexception.js~invalidarnexception",
     "class/lib/AWS/IAM/Exception/InvalidArnException.js~InvalidArnException.html",
-    "<span>InvalidArnException</span> <span class=\"search-result-import-path\">./lib/AWS/IAM/Exception/InvalidArnException.js</span>",
+    "<span>InvalidArnException</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/IAM/Exception/InvalidArnException.js</span>",
     "class"
   ],
   [
-    "./lib/exception/methodsnotimplementedexception.js~methodsnotimplementedexception",
+    "deep-core/lib/exception/methodsnotimplementedexception.js~methodsnotimplementedexception",
     "class/lib/Exception/MethodsNotImplementedException.js~MethodsNotImplementedException.html",
-    "<span>MethodsNotImplementedException</span> <span class=\"search-result-import-path\">./lib/Exception/MethodsNotImplementedException.js</span>",
+    "<span>MethodsNotImplementedException</span> <span class=\"search-result-import-path\">deep-core/lib/Exception/MethodsNotImplementedException.js</span>",
     "class"
   ],
   [
-    "./lib/aws/lambda/exception/missingruntimecontextexception.js~missingruntimecontextexception",
+    "deep-core/lib/aws/lambda/exception/missingruntimecontextexception.js~missingruntimecontextexception",
     "class/lib/AWS/Lambda/Exception/MissingRuntimeContextException.js~MissingRuntimeContextException.html",
-    "<span>MissingRuntimeContextException</span> <span class=\"search-result-import-path\">./lib/AWS/Lambda/Exception/MissingRuntimeContextException.js</span>",
+    "<span>MissingRuntimeContextException</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/Lambda/Exception/MissingRuntimeContextException.js</span>",
     "class"
   ],
   [
-    "./lib/generic/objectstorage.js~objectstorage",
+    "deep-core/lib/generic/objectstorage.js~objectstorage",
     "class/lib/Generic/ObjectStorage.js~ObjectStorage.html",
-    "<span>ObjectStorage</span> <span class=\"search-result-import-path\">./lib/Generic/ObjectStorage.js</span>",
+    "<span>ObjectStorage</span> <span class=\"search-result-import-path\">deep-core/lib/Generic/ObjectStorage.js</span>",
     "class"
   ],
   [
-    "./lib/generic/objectvector.js~objectvector",
+    "deep-core/lib/generic/objectvector.js~objectvector",
     "class/lib/Generic/ObjectVector.js~ObjectVector.html",
-    "<span>ObjectVector</span> <span class=\"search-result-import-path\">./lib/Generic/ObjectVector.js</span>",
+    "<span>ObjectVector</span> <span class=\"search-result-import-path\">deep-core/lib/Generic/ObjectVector.js</span>",
     "class"
   ],
   [
-    "./lib/aws/iam/policy.js~policy",
+    "deep-core/lib/aws/iam/policy.js~policy",
     "class/lib/AWS/IAM/Policy.js~Policy.html",
-    "<span>Policy</span> <span class=\"search-result-import-path\">./lib/AWS/IAM/Policy.js</span>",
+    "<span>Policy</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/IAM/Policy.js</span>",
     "class"
   ],
   [
-    "./lib/aws/region.js~region",
+    "deep-core/lib/aws/region.js~region",
     "class/lib/AWS/Region.js~Region.html",
-    "<span>Region</span> <span class=\"search-result-import-path\">./lib/AWS/Region.js</span>",
+    "<span>Region</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/Region.js</span>",
     "class"
   ],
   [
-    "./lib/aws/lambda/request.js~request",
+    "deep-core/lib/aws/lambda/request.js~request",
     "class/lib/AWS/Lambda/Request.js~Request.html",
-    "<span>Request</span> <span class=\"search-result-import-path\">./lib/AWS/Lambda/Request.js</span>",
+    "<span>Request</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/Lambda/Request.js</span>",
     "class"
   ],
   [
-    "./lib/aws/iam/resource.js~resource",
+    "deep-core/lib/aws/iam/resource.js~resource",
     "class/lib/AWS/IAM/Resource.js~Resource.html",
-    "<span>Resource</span> <span class=\"search-result-import-path\">./lib/AWS/IAM/Resource.js</span>",
+    "<span>Resource</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/IAM/Resource.js</span>",
     "class"
   ],
   [
-    "./lib/aws/lambda/response.js~response",
+    "deep-core/lib/aws/lambda/response.js~response",
     "class/lib/AWS/Lambda/Response.js~Response.html",
-    "<span>Response</span> <span class=\"search-result-import-path\">./lib/AWS/Lambda/Response.js</span>",
+    "<span>Response</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/Lambda/Response.js</span>",
     "class"
   ],
   [
-    "./lib/aws/lambda/runtime.js~runtime",
+    "deep-core/lib/aws/lambda/runtime.js~runtime",
     "class/lib/AWS/Lambda/Runtime.js~Runtime.html",
-    "<span>Runtime</span> <span class=\"search-result-import-path\">./lib/AWS/Lambda/Runtime.js</span>",
+    "<span>Runtime</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/Lambda/Runtime.js</span>",
     "class"
   ],
   [
-    "./lib/aws/service.js~service",
+    "deep-core/lib/aws/service.js~service",
     "class/lib/AWS/Service.js~Service.html",
-    "<span>Service</span> <span class=\"search-result-import-path\">./lib/AWS/Service.js</span>",
+    "<span>Service</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/Service.js</span>",
     "class"
   ],
   [
-    "./lib/aws/iam/statement.js~statement",
+    "deep-core/lib/aws/iam/statement.js~statement",
     "class/lib/AWS/IAM/Statement.js~Statement.html",
-    "<span>Statement</span> <span class=\"search-result-import-path\">./lib/AWS/IAM/Statement.js</span>",
+    "<span>Statement</span> <span class=\"search-result-import-path\">deep-core/lib/AWS/IAM/Statement.js</span>",
     "class"
   ],
   [

@@ -1,86 +1,86 @@
 window.esdocSearchIndex = [
   [
-    "./lib/resource/action.js~action",
+    "deep-resource/lib/resource/action.js~action",
     "class/lib/Resource/Action.js~Action.html",
-    "<span>Action</span> <span class=\"search-result-import-path\">./lib/Resource/Action.js</span>",
+    "<span>Action</span> <span class=\"search-result-import-path\">deep-resource/lib/Resource/Action.js</span>",
     "class"
   ],
   [
-    "./lib/resource/exception/cachedrequestexception.js~cachedrequestexception",
+    "deep-resource/lib/resource/exception/cachedrequestexception.js~cachedrequestexception",
     "class/lib/Resource/Exception/CachedRequestException.js~CachedRequestException.html",
-    "<span>CachedRequestException</span> <span class=\"search-result-import-path\">./lib/Resource/Exception/CachedRequestException.js</span>",
+    "<span>CachedRequestException</span> <span class=\"search-result-import-path\">deep-resource/lib/Resource/Exception/CachedRequestException.js</span>",
     "class"
   ],
   [
-    "./lib/exception/exception.js~exception",
+    "deep-resource/lib/exception/exception.js~exception",
     "class/lib/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-resource/lib/Exception/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/resource/instance.js~instance",
+    "deep-resource/lib/resource/instance.js~instance",
     "class/lib/Resource/Instance.js~Instance.html",
-    "<span>Instance</span> <span class=\"search-result-import-path\">./lib/Resource/Instance.js</span>",
+    "<span>Instance</span> <span class=\"search-result-import-path\">deep-resource/lib/Resource/Instance.js</span>",
     "class"
   ],
   [
-    "./lib/resource/lambdaresponse.js~lambdaresponse",
+    "deep-resource/lib/resource/lambdaresponse.js~lambdaresponse",
     "class/lib/Resource/LambdaResponse.js~LambdaResponse.html",
-    "<span>LambdaResponse</span> <span class=\"search-result-import-path\">./lib/Resource/LambdaResponse.js</span>",
+    "<span>LambdaResponse</span> <span class=\"search-result-import-path\">deep-resource/lib/Resource/LambdaResponse.js</span>",
     "class"
   ],
   [
-    "./lib/resource/localrequest.js~localrequest",
+    "deep-resource/lib/resource/localrequest.js~localrequest",
     "class/lib/Resource/LocalRequest.js~LocalRequest.html",
-    "<span>LocalRequest</span> <span class=\"search-result-import-path\">./lib/Resource/LocalRequest.js</span>",
+    "<span>LocalRequest</span> <span class=\"search-result-import-path\">deep-resource/lib/Resource/LocalRequest.js</span>",
     "class"
   ],
   [
-    "./lib/resource/exception/missingactionexception.js~missingactionexception",
+    "deep-resource/lib/resource/exception/missingactionexception.js~missingactionexception",
     "class/lib/Resource/Exception/MissingActionException.js~MissingActionException.html",
-    "<span>MissingActionException</span> <span class=\"search-result-import-path\">./lib/Resource/Exception/MissingActionException.js</span>",
+    "<span>MissingActionException</span> <span class=\"search-result-import-path\">deep-resource/lib/Resource/Exception/MissingActionException.js</span>",
     "class"
   ],
   [
-    "./lib/resource/exception/missingcacheimplementationexception.js~missingcacheimplementationexception",
+    "deep-resource/lib/resource/exception/missingcacheimplementationexception.js~missingcacheimplementationexception",
     "class/lib/Resource/Exception/MissingCacheImplementationException.js~MissingCacheImplementationException.html",
-    "<span>MissingCacheImplementationException</span> <span class=\"search-result-import-path\">./lib/Resource/Exception/MissingCacheImplementationException.js</span>",
+    "<span>MissingCacheImplementationException</span> <span class=\"search-result-import-path\">deep-resource/lib/Resource/Exception/MissingCacheImplementationException.js</span>",
     "class"
   ],
   [
-    "./lib/exception/missingresourceexception.js~missingresourceexception",
+    "deep-resource/lib/exception/missingresourceexception.js~missingresourceexception",
     "class/lib/Exception/MissingResourceException.js~MissingResourceException.html",
-    "<span>MissingResourceException</span> <span class=\"search-result-import-path\">./lib/Exception/MissingResourceException.js</span>",
+    "<span>MissingResourceException</span> <span class=\"search-result-import-path\">deep-resource/lib/Exception/MissingResourceException.js</span>",
     "class"
   ],
   [
-    "./lib/resource/request.js~request",
+    "deep-resource/lib/resource/request.js~request",
     "class/lib/Resource/Request.js~Request.html",
-    "<span>Request</span> <span class=\"search-result-import-path\">./lib/Resource/Request.js</span>",
+    "<span>Request</span> <span class=\"search-result-import-path\">deep-resource/lib/Resource/Request.js</span>",
     "class"
   ],
   [
-    "./lib/resource.js~resource",
+    "deep-resource/lib/resource.js~resource",
     "class/lib/Resource.js~Resource.html",
-    "<span>Resource</span> <span class=\"search-result-import-path\">./lib/Resource.js</span>",
+    "<span>Resource</span> <span class=\"search-result-import-path\">deep-resource/lib/Resource.js</span>",
     "class"
   ],
   [
-    "./lib/resource/response.js~response",
+    "deep-resource/lib/resource/response.js~response",
     "class/lib/Resource/Response.js~Response.html",
-    "<span>Response</span> <span class=\"search-result-import-path\">./lib/Resource/Response.js</span>",
+    "<span>Response</span> <span class=\"search-result-import-path\">deep-resource/lib/Resource/Response.js</span>",
     "class"
   ],
   [
-    "./lib/resource/superagentresponse.js~superagentresponse",
+    "deep-resource/lib/resource/superagentresponse.js~superagentresponse",
     "class/lib/Resource/SuperagentResponse.js~SuperagentResponse.html",
-    "<span>SuperagentResponse</span> <span class=\"search-result-import-path\">./lib/Resource/SuperagentResponse.js</span>",
+    "<span>SuperagentResponse</span> <span class=\"search-result-import-path\">deep-resource/lib/Resource/SuperagentResponse.js</span>",
     "class"
   ],
   [
-    "./lib/resource/exception/unknownmethodexception.js~unknownmethodexception",
+    "deep-resource/lib/resource/exception/unknownmethodexception.js~unknownmethodexception",
     "class/lib/Resource/Exception/UnknownMethodException.js~UnknownMethodException.html",
-    "<span>UnknownMethodException</span> <span class=\"search-result-import-path\">./lib/Resource/Exception/UnknownMethodException.js</span>",
+    "<span>UnknownMethodException</span> <span class=\"search-result-import-path\">deep-resource/lib/Resource/Exception/UnknownMethodException.js</span>",
     "class"
   ],
   [

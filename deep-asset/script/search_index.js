@@ -1,14 +1,14 @@
 window.esdocSearchIndex = [
   [
-    "./lib/asset.js~asset",
+    "deep-asset/lib/asset.js~asset",
     "class/lib/Asset.js~Asset.html",
-    "<span>Asset</span> <span class=\"search-result-import-path\">./lib/Asset.js</span>",
+    "<span>Asset</span> <span class=\"search-result-import-path\">deep-asset/lib/Asset.js</span>",
     "class"
   ],
   [
-    "./lib/exception/exception.js~exception",
+    "deep-asset/lib/exception/exception.js~exception",
     "class/lib/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-asset/lib/Exception/Exception.js</span>",
     "class"
   ],
   [

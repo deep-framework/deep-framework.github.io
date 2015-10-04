@@ -1,50 +1,50 @@
 window.esdocSearchIndex = [
   [
-    "./lib/exception/authexception.js~authexception",
+    "deep-security/lib/exception/authexception.js~authexception",
     "class/lib/Exception/AuthException.js~AuthException.html",
-    "<span>AuthException</span> <span class=\"search-result-import-path\">./lib/Exception/AuthException.js</span>",
+    "<span>AuthException</span> <span class=\"search-result-import-path\">deep-security/lib/Exception/AuthException.js</span>",
     "class"
   ],
   [
-    "./lib/exception/exception.js~exception",
+    "deep-security/lib/exception/exception.js~exception",
     "class/lib/Exception/Exception.js~Exception.html",
-    "<span>Exception</span> <span class=\"search-result-import-path\">./lib/Exception/Exception.js</span>",
+    "<span>Exception</span> <span class=\"search-result-import-path\">deep-security/lib/Exception/Exception.js</span>",
     "class"
   ],
   [
-    "./lib/exception/loaduserexception.js~loaduserexception",
+    "deep-security/lib/exception/loaduserexception.js~loaduserexception",
     "class/lib/Exception/LoadUserException.js~LoadUserException.html",
-    "<span>LoadUserException</span> <span class=\"search-result-import-path\">./lib/Exception/LoadUserException.js</span>",
+    "<span>LoadUserException</span> <span class=\"search-result-import-path\">deep-security/lib/Exception/LoadUserException.js</span>",
     "class"
   ],
   [
-    "./lib/localtoken.js~localtoken",
+    "deep-security/lib/localtoken.js~localtoken",
     "class/lib/LocalToken.js~LocalToken.html",
-    "<span>LocalToken</span> <span class=\"search-result-import-path\">./lib/LocalToken.js</span>",
+    "<span>LocalToken</span> <span class=\"search-result-import-path\">deep-security/lib/LocalToken.js</span>",
     "class"
   ],
   [
-    "./lib/exception/missingloginproviderexception.js~missingloginproviderexception",
+    "deep-security/lib/exception/missingloginproviderexception.js~missingloginproviderexception",
     "class/lib/Exception/MissingLoginProviderException.js~MissingLoginProviderException.html",
-    "<span>MissingLoginProviderException</span> <span class=\"search-result-import-path\">./lib/Exception/MissingLoginProviderException.js</span>",
+    "<span>MissingLoginProviderException</span> <span class=\"search-result-import-path\">deep-security/lib/Exception/MissingLoginProviderException.js</span>",
     "class"
   ],
   [
-    "./lib/security.js~security",
+    "deep-security/lib/security.js~security",
     "class/lib/Security.js~Security.html",
-    "<span>Security</span> <span class=\"search-result-import-path\">./lib/Security.js</span>",
+    "<span>Security</span> <span class=\"search-result-import-path\">deep-security/lib/Security.js</span>",
     "class"
   ],
   [
-    "./lib/token.js~token",
+    "deep-security/lib/token.js~token",
     "class/lib/Token.js~Token.html",
-    "<span>Token</span> <span class=\"search-result-import-path\">./lib/Token.js</span>",
+    "<span>Token</span> <span class=\"search-result-import-path\">deep-security/lib/Token.js</span>",
     "class"
   ],
   [
-    "./lib/userprovider.js~userprovider",
+    "deep-security/lib/userprovider.js~userprovider",
     "class/lib/UserProvider.js~UserProvider.html",
-    "<span>UserProvider</span> <span class=\"search-result-import-path\">./lib/UserProvider.js</span>",
+    "<span>UserProvider</span> <span class=\"search-result-import-path\">deep-security/lib/UserProvider.js</span>",
     "class"
   ],
   [

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>DEEP Framework API Docs</title>
-
+    <link type="text/css" rel="stylesheet" href="css/style.css">
     <script>
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = process;
@@ -22,20 +22,32 @@
 
                     var item = document.createElement('li');
                     var link = document.createElement('a');
+                    var title = document.createElement('span');
 
-                    link.textContent = libName;
-                    link.href = libDir + '/index.html';
+                    item.setAttribute('class', libName);
+                    link.textContent = libName.replace('deep-', 'DEEP ');
+                    title.textContent = libName;
+                    link.href = libDir + '';
 
                     item.appendChild(link);
                     list.appendChild(item);
+                    item.insertBefore(title, link);
                 }
             }
         }
     </script>
 </head>
-<body>
-<h1>DEEP Framework libraries API documentation</h1>
-<img src="badge.svg">
-<ul id="libs"></ul>
+<body class="layout-container">
+<header>
+    <a href="./">Home</a>
+
+    <a data-ice="repoURL" href="https://github.com/MitocGroup/deep.git" class="repo-url-github">Repository</a>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+    <ul id="libs"></ul>
+</div>
+</nav>
+
 </body>
 </html>

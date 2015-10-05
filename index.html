@@ -21,10 +21,9 @@
                         var link = document.createElement('a');
                         var title = document.createElement('span');
 
-                        item.setAttribute('class', libName);
-                        link.textContent = libName.replace('deep-', 'DEEP ');
+                        link.textContent = libName;
                         title.textContent = libName;
-                        link.href = libDir + '';
+                        link.href = libDir;
 
                         item.appendChild(link);
                         list.appendChild(item);

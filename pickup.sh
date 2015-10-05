@@ -38,7 +38,14 @@ for lib in ${path}/deep-*; do
       echo -n ',' >> ${libs_file}
     fi
 
-    echo -n '"'${lib_name}'":"'${lib_name}'"' >> ${libs_file}
+    pck_name=$(node -e "console.log(require('$lib/package.json').description)")
+
+    # fallback...
+    if [ -z "$pck_name" ]; then
+      pck_name=${lib_name}
+    fi
+
+    echo -n '"'${lib_name}'":"'${pck_name}'"' >> ${libs_file}
     put_comma=true
   fi
 done

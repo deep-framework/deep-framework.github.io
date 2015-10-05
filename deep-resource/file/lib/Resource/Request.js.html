@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">lib/Resource/Request.js | deep-resource API Document</title>
+  <title data-ice="title">lib/Resource/Request.js | DEEP Resource Library API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -86,7 +86,7 @@ export class Request {
     this._cacheTtl = Request.TTL_FOREVER;
     this._cached = false;
 
-    this._native = false;
+    this._native = true; // @todo: change to false on an stable API Gateway version
   }
 
   /**

@@ -873,10 +873,10 @@ h1 .esdoc-coverage {
   display: block;
   position: relative;
   padding-left: 2.15em;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 .navigation #libs li a:first-letter {
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 .navigation #libs li a:before {
   content: 'L';

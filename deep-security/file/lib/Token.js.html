@@ -13,7 +13,9 @@
 <body class="layout-container">
 
 <header>
-  <a href="../../">Home</a>
+  <a href="./">Home</a>
+  <a href="identifiers.html">Identifier</a>
+  <a href="source.html">Source</a>
   
   <a data-ice="repoURL" href="https://github.com/MitocGroup/deep.git" class="repo-url-github">Repository</a>
   <div class="search-box">
@@ -77,14 +79,14 @@ export class Token {
   /**
    * @param {Function} callback
    */
-  getCredentials(callback) {
+  getCredentials(callback = () =&gt; null) {
     // @todo: set retries in a smarter way...
     AWS.config.maxRetries = 3;
 
     let defaultRegion = AWS.config.region;
 
     AWS.config.update({
-      region: this._getRegionFromIdentityPoolId(this._identityPoolId),
+      region: Token._getRegionFromIdentityPoolId(this._identityPoolId),
     });
 
     let cognitoParams = {
@@ -124,7 +126,7 @@ export class Token {
    * @returns {String}
    * @private
    */
-  _getRegionFromIdentityPoolId(identityPoolId) {
+  static _getRegionFromIdentityPoolId(identityPoolId) {
     return identityPoolId.split(&apos;:&apos;)[0];
   }
 

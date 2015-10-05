@@ -504,6 +504,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/resource/action.js~action#resource",
+    "class/lib/Resource/Action.js~Action.html#instance-get-resource",
+    "lib/Resource/Action.js~Action#resource",
+    "member"
+  ],
+  [
     "lib/resource/action.js~action#source",
     "class/lib/Resource/Action.js~Action.html#instance-get-source",
     "lib/Resource/Action.js~Action#source",
@@ -601,13 +607,13 @@ window.esdocSearchIndex = [
   ],
   [
     "lib/resource/instance.js~instance#cache",
-    "class/lib/Resource/Instance.js~Instance.html#instance-set-cache",
+    "class/lib/Resource/Instance.js~Instance.html#instance-get-cache",
     "lib/Resource/Instance.js~Instance#cache",
     "member"
   ],
   [
     "lib/resource/instance.js~instance#cache",
-    "class/lib/Resource/Instance.js~Instance.html#instance-get-cache",
+    "class/lib/Resource/Instance.js~Instance.html#instance-set-cache",
     "lib/Resource/Instance.js~Instance#cache",
     "member"
   ],
@@ -625,13 +631,13 @@ window.esdocSearchIndex = [
   ],
   [
     "lib/resource/instance.js~instance#localbackend",
-    "class/lib/Resource/Instance.js~Instance.html#instance-set-localBackend",
+    "class/lib/Resource/Instance.js~Instance.html#instance-get-localBackend",
     "lib/Resource/Instance.js~Instance#localBackend",
     "member"
   ],
   [
     "lib/resource/instance.js~instance#localbackend",
-    "class/lib/Resource/Instance.js~Instance.html#instance-get-localBackend",
+    "class/lib/Resource/Instance.js~Instance.html#instance-set-localBackend",
     "lib/Resource/Instance.js~Instance#localBackend",
     "member"
   ],
@@ -646,6 +652,18 @@ window.esdocSearchIndex = [
     "class/lib/Resource/Instance.js~Instance.html#instance-method-request",
     "lib/Resource/Instance.js~Instance#request",
     "method"
+  ],
+  [
+    "lib/resource/instance.js~instance#securitycredentials",
+    "class/lib/Resource/Instance.js~Instance.html#instance-get-securityCredentials",
+    "lib/Resource/Instance.js~Instance#securityCredentials",
+    "member"
+  ],
+  [
+    "lib/resource/instance.js~instance#securitycredentials",
+    "class/lib/Resource/Instance.js~Instance.html#instance-set-securityCredentials",
+    "lib/Resource/Instance.js~Instance#securityCredentials",
+    "member"
   ],
   [
     "lib/resource/lambdaresponse.js",
@@ -733,13 +751,13 @@ window.esdocSearchIndex = [
   ],
   [
     "lib/resource/request.js~request#cachettl",
-    "class/lib/Resource/Request.js~Request.html#instance-get-cacheTtl",
+    "class/lib/Resource/Request.js~Request.html#instance-set-cacheTtl",
     "lib/Resource/Request.js~Request#cacheTtl",
     "member"
   ],
   [
     "lib/resource/request.js~request#cachettl",
-    "class/lib/Resource/Request.js~Request.html#instance-set-cacheTtl",
+    "class/lib/Resource/Request.js~Request.html#instance-get-cacheTtl",
     "lib/Resource/Request.js~Request#cacheTtl",
     "member"
   ],
@@ -780,6 +798,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "lib/resource/request.js~request#native",
+    "class/lib/Resource/Request.js~Request.html#instance-get-native",
+    "lib/Resource/Request.js~Request#native",
+    "member"
+  ],
+  [
     "lib/resource/request.js~request#payload",
     "class/lib/Resource/Request.js~Request.html#instance-get-payload",
     "lib/Resource/Request.js~Request#payload",
@@ -789,6 +813,12 @@ window.esdocSearchIndex = [
     "lib/resource/request.js~request#send",
     "class/lib/Resource/Request.js~Request.html#instance-method-send",
     "lib/Resource/Request.js~Request#send",
+    "method"
+  ],
+  [
+    "lib/resource/request.js~request#usedirectcall",
+    "class/lib/Resource/Request.js~Request.html#instance-method-useDirectCall",
+    "lib/Resource/Request.js~Request#useDirectCall",
     "method"
   ],
   [

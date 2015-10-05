@@ -13,7 +13,9 @@
 <body class="layout-container">
 
 <header>
-  <a href="../../">Home</a>
+  <a href="./">Home</a>
+  <a href="identifiers.html">Identifier</a>
+  <a href="source.html">Source</a>
   
   <a data-ice="repoURL" href="https://github.com/MitocGroup/deep.git" class="repo-url-github">Repository</a>
   <div class="search-box">
@@ -119,6 +121,9 @@ export class Resource extends Kernel.ContainerAware {
    */
   boot(kernel, callback) {
     let cache = kernel.container.get(&apos;cache&apos;);
+    let security = kernel.container.get(&apos;security&apos;);
+
+    let resourcesVector = [];
 
     for (let microserviceKey in kernel.microservices) {
       if (!kernel.microservices.hasOwnProperty(microserviceKey)) {
@@ -143,8 +148,24 @@ export class Resource extends Kernel.ContainerAware {
         resource.localBackend = this._localBackend;
 
         this._resources[microservice.identifier][resourceName] = resource;
+
+        resourcesVector.push(resource);
       }
     }
+
+    security.onTokenAvailable((token) =&gt; {
+      let credentials = token.credentials;
+
+      for (let resourceKey in resourcesVector) {
+        if (!resourcesVector.hasOwnProperty(resourceKey)) {
+          continue;
+        }
+
+        let resource = resourcesVector[resourceKey];
+
+        resource.securityCredentials = credentials;
+      }
+    });
 
     callback();
   }

@@ -5,36 +5,48 @@
     <title>DEEP Framework API Docs</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <script>
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = process;
-        xhr.open("GET", "libs.json", true);
-        xhr.send();
+        (function() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    var list = document.getElementById('libs');
+                    var libs = JSON.parse(xhr.responseText);
+                    var libsKeys = Object.keys(libs);
 
-        function process() {
-            if (xhr.readyState == 4) {
-                var list = document.getElementById('libs');
-                var libs = JSON.parse(xhr.responseText);
-                var libsKeys = Object.keys(libs);
+                    for (var i = 0; i < libsKeys.length; i++) {
+                        var libDir = libsKeys[i];
+                        var libName = libs[libDir];
 
-                for (var i = 0; i < libsKeys.length; i++) {
-                    var libDir = libsKeys[i];
-                    var libName = libs[libDir];
+                        var item = document.createElement('li');
+                        var link = document.createElement('a');
+                        var title = document.createElement('span');
 
-                    var item = document.createElement('li');
-                    var link = document.createElement('a');
-                    var title = document.createElement('span');
+                        item.setAttribute('class', libName);
+                        link.textContent = libName.replace('deep-', 'DEEP ');
+                        title.textContent = libName;
+                        link.href = libDir + '';
 
-                    item.setAttribute('class', libName);
-                    link.textContent = libName.replace('deep-', 'DEEP ');
-                    title.textContent = libName;
-                    link.href = libDir + '';
-
-                    item.appendChild(link);
-                    list.appendChild(item);
-                    item.insertBefore(title, link);
+                        item.appendChild(link);
+                        list.appendChild(item);
+                        item.insertBefore(title, link);
+                    }
                 }
-            }
-        }
+            };
+            xhr.open("GET", "libs.json", true);
+            xhr.send();
+        })();
+
+        (function() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    var readme = document.getElementById('github-readme');
+                    readme.innerHTML = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "README.html", true);
+            xhr.send();
+        })();
     </script>
 </head>
 <body class="layout-container">
@@ -49,9 +61,7 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown">
-# Define README.md
-<!-- Add README.md -->
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown" id="github-readme">
 </div></div>
 
 </body>

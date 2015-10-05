@@ -13,7 +13,9 @@
 <body class="layout-container">
 
 <header>
-  <a href="../../">Home</a>
+  <a href="./">Home</a>
+  <a href="identifiers.html">Identifier</a>
+  <a href="source.html">Source</a>
   
   <a data-ice="repoURL" href="https://github.com/MitocGroup/deep.git" class="repo-url-github">Repository</a>
   <div class="search-box">
@@ -71,6 +73,18 @@ export class Security extends Kernel.ContainerAware {
     this._token = null;
     this._userProvider = null;
     this._userProviderEndpoint = null;
+
+    this._onTokenAvailable = [];
+  }
+
+  /**
+   * @param {Function} callback
+   * @returns {Security}
+   */
+  onTokenAvailable(callback) {
+    this._onTokenAvailable.push(callback);
+
+    return this;
   }
 
   /**
@@ -200,7 +214,17 @@ export class Security extends Kernel.ContainerAware {
 
     this._token.userProvider = this.userProvider;
 
-    this._token.getCredentials(callback);
+    this._token.getCredentials((...args) =&gt; {
+      for (let hookKey in this._onTokenAvailable) {
+        if (!this._onTokenAvailable.hasOwnProperty(hookKey)) {
+          continue;
+        }
+
+        this._onTokenAvailable[hookKey](this._token);
+      }
+
+      callback(...args);
+    });
 
     return this._token;
   }
@@ -216,7 +240,17 @@ export class Security extends Kernel.ContainerAware {
 
     this._token.userProvider = this.userProvider;
 
-    this._token.getCredentials(callback);
+    this._token.getCredentials((...args) =&gt; {
+      for (let hookKey in this._onTokenAvailable) {
+        if (!this._onTokenAvailable.hasOwnProperty(hookKey)) {
+          continue;
+        }
+
+        this._onTokenAvailable[hookKey](this._token);
+      }
+
+      callback(...args);
+    });
 
     return this._token;
   }

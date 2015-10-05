@@ -330,7 +330,7 @@
     "access": null,
     "description": null,
     "lineNumber": 5,
-    "content": "/**\n * Created by mgoria on 6/17/15.\n */\n\n'use strict';\n\nimport Kernel from 'deep-kernel';\nimport {MissingLoginProviderException} from './Exception/MissingLoginProviderException';\nimport {Token} from './Token';\nimport {LocalToken} from './LocalToken';\nimport {UserProvider} from './UserProvider';\n\n/**\n * Deep Security implementation\n */\nexport class Security extends Kernel.ContainerAware {\n  /**\n   * Defines all class private properties\n   *\n   * @param {String} identityPoolId\n   * @param {Object} identityProviders\n   */\n  constructor(identityPoolId = null, identityProviders = {}) {\n    super();\n\n    this._identityPoolId = identityPoolId;\n    this._identityProviders = identityProviders;\n    this._token = null;\n    this._userProvider = null;\n    this._userProviderEndpoint = null;\n  }\n\n  /**\n   * @returns {string}\n   */\n  static get PROVIDER_AMAZON() {\n    return 'www.amazon.com';\n  }\n\n  /**\n   * @returns {string}\n   */\n  static get PROVIDER_FACEBOOK() {\n    return 'graph.facebook.com';\n  }\n\n  /**\n   * @returns {string}\n   */\n  static get PROVIDER_GOOGLE() {\n    return 'accounts.google.com';\n  }\n\n  /**\n   * @returns {Object}\n   */\n  get identityProviders() {\n    return this._identityProviders;\n  }\n\n  /**\n   * @returns {Object}\n   */\n  get identityPoolId() {\n    return this._identityPoolId;\n  }\n\n  /**\n   * @returns {UserProvider}\n   */\n  get userProvider() {\n    if (!this._userProvider) {\n      this._userProvider = new UserProvider(this._userProviderEndpoint, this.container.get('resource'));\n    }\n\n    return this._userProvider;\n  }\n\n  /**\n   * Booting a certain service\n   *\n   * @param {Kernel} kernel\n   * @param {Function} callback\n   */\n  boot(kernel, callback) {\n    // @todo: remove this compatibility hook\n    let globals = kernel.config.globals || kernel.config;\n\n    this._identityProviders = globals.security.identityProviders;\n    this._userProviderEndpoint = globals.security.userProviderEndpoint;\n\n    this._identityPoolId = kernel.config.identityPoolId;\n\n    callback();\n  }\n\n  /**\n   * @param {String} name\n   * @returns {Object}\n   */\n  getLoginProviderConfig(name) {\n    for (let providerName in this._identityProviders) {\n      if (!this._identityProviders.hasOwnProperty(providerName)) {\n        continue;\n      }\n\n      if (providerName === name) {\n        return this._identityProviders[providerName];\n      }\n    }\n\n    throw new MissingLoginProviderException(name);\n  }\n\n  /**\n   * @returns {Object}\n   */\n  get amazonLoginProviderConfig() {\n    return this.getLoginProviderConfig(Security.PROVIDER_AMAZON);\n  }\n\n  /**\n   * @returns {Object}\n   */\n  get facebookLoginProviderConfig() {\n    return this.getLoginProviderConfig(Security.PROVIDER_FACEBOOK);\n  }\n\n  /**\n   * @returns {Object}\n   */\n  get googleLoginProviderConfig() {\n    return this.getLoginProviderConfig(Security.PROVIDER_GOOGLE);\n  }\n\n  /**\n   * @returns {null|Token}\n   */\n  get token() {\n    return this._token;\n  }\n\n  /**\n   * @param {String} providerName\n   * @param {String} userToken\n   * @param {String} userId\n   * @param {Function} callback\n   * @returns {Token}\n   */\n  login(providerName, userToken, userId, callback) {\n    // check if providerName is defined\n    this.getLoginProviderConfig(providerName);\n\n    let TokenImplementation = this._localBackend ? LocalToken : Token;\n\n    this._token = new TokenImplementation(this._identityPoolId, providerName, userToken, userId);\n\n    this._token.userProvider = this.userProvider;\n\n    this._token.getCredentials(callback);\n\n    return this._token;\n  }\n\n  /**\n   * @param {Function} callback\n   * @returns {Token}\n   */\n  anonymousLogin(callback) {\n    let TokenImplementation = this._localBackend ? LocalToken : Token;\n\n    this._token = new TokenImplementation(this._identityPoolId);\n\n    this._token.userProvider = this.userProvider;\n\n    this._token.getCredentials(callback);\n\n    return this._token;\n  }\n}\n"
+    "content": "/**\n * Created by mgoria on 6/17/15.\n */\n\n'use strict';\n\nimport Kernel from 'deep-kernel';\nimport {MissingLoginProviderException} from './Exception/MissingLoginProviderException';\nimport {Token} from './Token';\nimport {LocalToken} from './LocalToken';\nimport {UserProvider} from './UserProvider';\n\n/**\n * Deep Security implementation\n */\nexport class Security extends Kernel.ContainerAware {\n  /**\n   * Defines all class private properties\n   *\n   * @param {String} identityPoolId\n   * @param {Object} identityProviders\n   */\n  constructor(identityPoolId = null, identityProviders = {}) {\n    super();\n\n    this._identityPoolId = identityPoolId;\n    this._identityProviders = identityProviders;\n    this._token = null;\n    this._userProvider = null;\n    this._userProviderEndpoint = null;\n\n    this._onTokenAvailable = [];\n  }\n\n  /**\n   * @param {Function} callback\n   * @returns {Security}\n   */\n  onTokenAvailable(callback) {\n    this._onTokenAvailable.push(callback);\n\n    return this;\n  }\n\n  /**\n   * @returns {string}\n   */\n  static get PROVIDER_AMAZON() {\n    return 'www.amazon.com';\n  }\n\n  /**\n   * @returns {string}\n   */\n  static get PROVIDER_FACEBOOK() {\n    return 'graph.facebook.com';\n  }\n\n  /**\n   * @returns {string}\n   */\n  static get PROVIDER_GOOGLE() {\n    return 'accounts.google.com';\n  }\n\n  /**\n   * @returns {Object}\n   */\n  get identityProviders() {\n    return this._identityProviders;\n  }\n\n  /**\n   * @returns {Object}\n   */\n  get identityPoolId() {\n    return this._identityPoolId;\n  }\n\n  /**\n   * @returns {UserProvider}\n   */\n  get userProvider() {\n    if (!this._userProvider) {\n      this._userProvider = new UserProvider(this._userProviderEndpoint, this.container.get('resource'));\n    }\n\n    return this._userProvider;\n  }\n\n  /**\n   * Booting a certain service\n   *\n   * @param {Kernel} kernel\n   * @param {Function} callback\n   */\n  boot(kernel, callback) {\n    // @todo: remove this compatibility hook\n    let globals = kernel.config.globals || kernel.config;\n\n    this._identityProviders = globals.security.identityProviders;\n    this._userProviderEndpoint = globals.security.userProviderEndpoint;\n\n    this._identityPoolId = kernel.config.identityPoolId;\n\n    callback();\n  }\n\n  /**\n   * @param {String} name\n   * @returns {Object}\n   */\n  getLoginProviderConfig(name) {\n    for (let providerName in this._identityProviders) {\n      if (!this._identityProviders.hasOwnProperty(providerName)) {\n        continue;\n      }\n\n      if (providerName === name) {\n        return this._identityProviders[providerName];\n      }\n    }\n\n    throw new MissingLoginProviderException(name);\n  }\n\n  /**\n   * @returns {Object}\n   */\n  get amazonLoginProviderConfig() {\n    return this.getLoginProviderConfig(Security.PROVIDER_AMAZON);\n  }\n\n  /**\n   * @returns {Object}\n   */\n  get facebookLoginProviderConfig() {\n    return this.getLoginProviderConfig(Security.PROVIDER_FACEBOOK);\n  }\n\n  /**\n   * @returns {Object}\n   */\n  get googleLoginProviderConfig() {\n    return this.getLoginProviderConfig(Security.PROVIDER_GOOGLE);\n  }\n\n  /**\n   * @returns {null|Token}\n   */\n  get token() {\n    return this._token;\n  }\n\n  /**\n   * @param {String} providerName\n   * @param {String} userToken\n   * @param {String} userId\n   * @param {Function} callback\n   * @returns {Token}\n   */\n  login(providerName, userToken, userId, callback) {\n    // check if providerName is defined\n    this.getLoginProviderConfig(providerName);\n\n    let TokenImplementation = this._localBackend ? LocalToken : Token;\n\n    this._token = new TokenImplementation(this._identityPoolId, providerName, userToken, userId);\n\n    this._token.userProvider = this.userProvider;\n\n    this._token.getCredentials((...args) => {\n      for (let hookKey in this._onTokenAvailable) {\n        if (!this._onTokenAvailable.hasOwnProperty(hookKey)) {\n          continue;\n        }\n\n        this._onTokenAvailable[hookKey](this._token);\n      }\n\n      callback(...args);\n    });\n\n    return this._token;\n  }\n\n  /**\n   * @param {Function} callback\n   * @returns {Token}\n   */\n  anonymousLogin(callback) {\n    let TokenImplementation = this._localBackend ? LocalToken : Token;\n\n    this._token = new TokenImplementation(this._identityPoolId);\n\n    this._token.userProvider = this.userProvider;\n\n    this._token.getCredentials((...args) => {\n      for (let hookKey in this._onTokenAvailable) {\n        if (!this._onTokenAvailable.hasOwnProperty(hookKey)) {\n          continue;\n        }\n\n        this._onTokenAvailable[hookKey](this._token);\n      }\n\n      callback(...args);\n    });\n\n    return this._token;\n  }\n}\n"
   },
   {
     "kind": "class",
@@ -470,6 +470,61 @@
     }
   },
   {
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "_onTokenAvailable",
+    "memberof": "lib/Security.js~Security",
+    "longname": "lib/Security.js~Security#_onTokenAvailable",
+    "access": null,
+    "description": null,
+    "lineNumber": 32,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "onTokenAvailable",
+    "memberof": "lib/Security.js~Security",
+    "longname": "lib/Security.js~Security#onTokenAvailable",
+    "access": null,
+    "description": null,
+    "lineNumber": 39,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Security}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "callback",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Security"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
     "kind": "get",
     "static": true,
     "variation": null,
@@ -478,7 +533,7 @@
     "longname": "lib/Security.js~Security.PROVIDER_AMAZON",
     "access": null,
     "description": null,
-    "lineNumber": 36,
+    "lineNumber": 48,
     "unknown": [
       {
         "tagName": "@returns",
@@ -509,7 +564,7 @@
     "longname": "lib/Security.js~Security.PROVIDER_FACEBOOK",
     "access": null,
     "description": null,
-    "lineNumber": 43,
+    "lineNumber": 55,
     "unknown": [
       {
         "tagName": "@returns",
@@ -540,7 +595,7 @@
     "longname": "lib/Security.js~Security.PROVIDER_GOOGLE",
     "access": null,
     "description": null,
-    "lineNumber": 50,
+    "lineNumber": 62,
     "unknown": [
       {
         "tagName": "@returns",
@@ -571,7 +626,7 @@
     "longname": "lib/Security.js~Security#identityProviders",
     "access": null,
     "description": null,
-    "lineNumber": 57,
+    "lineNumber": 69,
     "unknown": [
       {
         "tagName": "@returns",
@@ -602,7 +657,7 @@
     "longname": "lib/Security.js~Security#identityPoolId",
     "access": null,
     "description": null,
-    "lineNumber": 64,
+    "lineNumber": 76,
     "unknown": [
       {
         "tagName": "@returns",
@@ -633,7 +688,7 @@
     "longname": "lib/Security.js~Security#userProvider",
     "access": null,
     "description": null,
-    "lineNumber": 71,
+    "lineNumber": 83,
     "unknown": [
       {
         "tagName": "@returns",
@@ -664,7 +719,7 @@
     "longname": "lib/Security.js~Security#_userProvider",
     "access": null,
     "description": null,
-    "lineNumber": 73,
+    "lineNumber": 85,
     "undocument": true,
     "type": {
       "types": [
@@ -681,7 +736,7 @@
     "longname": "lib/Security.js~Security#boot",
     "access": null,
     "description": "Booting a certain service",
-    "lineNumber": 85,
+    "lineNumber": 97,
     "params": [
       {
         "nullable": null,
@@ -715,7 +770,7 @@
     "longname": "lib/Security.js~Security#_identityProviders",
     "access": null,
     "description": null,
-    "lineNumber": 89,
+    "lineNumber": 101,
     "undocument": true,
     "type": {
       "types": [
@@ -732,7 +787,7 @@
     "longname": "lib/Security.js~Security#_userProviderEndpoint",
     "access": null,
     "description": null,
-    "lineNumber": 90,
+    "lineNumber": 102,
     "undocument": true,
     "type": {
       "types": [
@@ -749,7 +804,7 @@
     "longname": "lib/Security.js~Security#_identityPoolId",
     "access": null,
     "description": null,
-    "lineNumber": 92,
+    "lineNumber": 104,
     "undocument": true,
     "type": {
       "types": [
@@ -766,7 +821,7 @@
     "longname": "lib/Security.js~Security#getLoginProviderConfig",
     "access": null,
     "description": null,
-    "lineNumber": 101,
+    "lineNumber": 113,
     "unknown": [
       {
         "tagName": "@returns",
@@ -804,7 +859,7 @@
     "longname": "lib/Security.js~Security#amazonLoginProviderConfig",
     "access": null,
     "description": null,
-    "lineNumber": 118,
+    "lineNumber": 130,
     "unknown": [
       {
         "tagName": "@returns",
@@ -835,7 +890,7 @@
     "longname": "lib/Security.js~Security#facebookLoginProviderConfig",
     "access": null,
     "description": null,
-    "lineNumber": 125,
+    "lineNumber": 137,
     "unknown": [
       {
         "tagName": "@returns",
@@ -866,7 +921,7 @@
     "longname": "lib/Security.js~Security#googleLoginProviderConfig",
     "access": null,
     "description": null,
-    "lineNumber": 132,
+    "lineNumber": 144,
     "unknown": [
       {
         "tagName": "@returns",
@@ -897,7 +952,7 @@
     "longname": "lib/Security.js~Security#token",
     "access": null,
     "description": null,
-    "lineNumber": 139,
+    "lineNumber": 151,
     "unknown": [
       {
         "tagName": "@returns",
@@ -929,7 +984,7 @@
     "longname": "lib/Security.js~Security#login",
     "access": null,
     "description": null,
-    "lineNumber": 150,
+    "lineNumber": 162,
     "unknown": [
       {
         "tagName": "@returns",
@@ -997,7 +1052,7 @@
     "longname": "lib/Security.js~Security#_token",
     "access": null,
     "description": null,
-    "lineNumber": 156,
+    "lineNumber": 168,
     "undocument": true,
     "type": {
       "types": [
@@ -1014,7 +1069,7 @@
     "longname": "lib/Security.js~Security#anonymousLogin",
     "access": null,
     "description": null,
-    "lineNumber": 169,
+    "lineNumber": 191,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1052,7 +1107,7 @@
     "longname": "lib/Security.js~Security#_token",
     "access": null,
     "description": null,
-    "lineNumber": 172,
+    "lineNumber": 194,
     "undocument": true,
     "type": {
       "types": [
@@ -1070,7 +1125,7 @@
     "access": null,
     "description": null,
     "lineNumber": 5,
-    "content": "/**\n * Created by mgoria on 6/23/15.\n */\n\n'use strict';\n\nimport AWS from 'aws-sdk';\nimport {AuthException} from './Exception/AuthException';\n\n/**\n * Security token holds details about logged user\n */\nexport class Token {\n  /**\n   * @param {String} identityPoolId\n   * @param {String} providerName\n   * @param {String} providerUserToken\n   * @param {String} providerUserId\n   */\n  constructor(identityPoolId, providerName = null, providerUserToken = null, providerUserId = null) {\n    this._identityPoolId = identityPoolId;\n    this._providerName = providerName;\n    this._providerUserToken = providerUserToken;\n    this._providerUserId = providerUserId;\n\n    this._user = null;\n    this._userProvider = null;\n    this._identityId = null;\n    this._credentials = null;\n\n    this._isAnonymous = true;\n  }\n\n  /**\n   * @param {Function} callback\n   */\n  getCredentials(callback) {\n    // @todo: set retries in a smarter way...\n    AWS.config.maxRetries = 3;\n\n    let defaultRegion = AWS.config.region;\n\n    AWS.config.update({\n      region: this._getRegionFromIdentityPoolId(this._identityPoolId),\n    });\n\n    let cognitoParams = {\n      IdentityPoolId: this._identityPoolId,\n    };\n\n    if (this._providerName && this._providerUserToken) {\n      this._isAnonymous = false;\n      cognitoParams.Logins = {};\n      cognitoParams.Logins[this._providerName] = this._providerUserToken;\n    }\n\n    this._credentials = new AWS.CognitoIdentityCredentials(cognitoParams);\n\n    // update AWS credentials\n    AWS.config.credentials = this._credentials.refresh(function(error) {\n      if (error) {\n        callback(new AuthException(error));\n        return;\n      }\n\n      this._identityId = this._credentials.identityId;\n\n      AWS.config.update({\n        accessKeyId: this._credentials.accessKeyId,\n        secretAccessKey: this._credentials.secretAccessKey,\n        sessionToken: this._credentials.sessionToken,\n        region: defaultRegion, // restore to default region\n      });\n\n      callback(null, this);\n    }.bind(this));\n  }\n\n  /**\n   * @param {String} identityPoolId\n   * @returns {String}\n   * @private\n   */\n  _getRegionFromIdentityPoolId(identityPoolId) {\n    return identityPoolId.split(':')[0];\n  }\n\n  /**\n   * @returns {String}\n   */\n  get providerName() {\n    return this._providerName;\n  }\n\n  /**\n   * @returns {String}\n   */\n  get providerUserToken() {\n    return this._providerUserToken;\n  }\n\n  /**\n   * @returns {String}\n   */\n  get providerUserId() {\n    return this._providerUserId;\n  }\n\n  /**\n   * @returns {String}\n   */\n  get identityId() {\n    return this._identityId;\n  }\n\n  /**\n   * @returns {Object}\n   */\n  get credentials() {\n    return this._credentials;\n  }\n\n  /**\n   * @returns {Boolean}\n   */\n  get isAnonymous() {\n    return this._isAnonymous;\n  }\n\n  /**\n   * @param {UserProvider} userProvider\n   */\n  set userProvider(userProvider) {\n    this._userProvider = userProvider;\n  }\n\n  /**\n   * @param {Function} callback\n   */\n  getUser(callback) {\n    if (this.isAnonymous) {\n      callback(null);\n    }\n\n    if (this._user === null) {\n      this._userProvider.loadUserByIdentityId(this.identityId, function(user) {\n        if (user) {\n          this._user = user;\n        }\n\n        callback(user);\n      }.bind(this));\n    } else {\n      callback(this._user);\n    }\n  }\n}\n"
+    "content": "/**\n * Created by mgoria on 6/23/15.\n */\n\n'use strict';\n\nimport AWS from 'aws-sdk';\nimport {AuthException} from './Exception/AuthException';\n\n/**\n * Security token holds details about logged user\n */\nexport class Token {\n  /**\n   * @param {String} identityPoolId\n   * @param {String} providerName\n   * @param {String} providerUserToken\n   * @param {String} providerUserId\n   */\n  constructor(identityPoolId, providerName = null, providerUserToken = null, providerUserId = null) {\n    this._identityPoolId = identityPoolId;\n    this._providerName = providerName;\n    this._providerUserToken = providerUserToken;\n    this._providerUserId = providerUserId;\n\n    this._user = null;\n    this._userProvider = null;\n    this._identityId = null;\n    this._credentials = null;\n\n    this._isAnonymous = true;\n  }\n\n  /**\n   * @param {Function} callback\n   */\n  getCredentials(callback = () => null) {\n    // @todo: set retries in a smarter way...\n    AWS.config.maxRetries = 3;\n\n    let defaultRegion = AWS.config.region;\n\n    AWS.config.update({\n      region: Token._getRegionFromIdentityPoolId(this._identityPoolId),\n    });\n\n    let cognitoParams = {\n      IdentityPoolId: this._identityPoolId,\n    };\n\n    if (this._providerName && this._providerUserToken) {\n      this._isAnonymous = false;\n      cognitoParams.Logins = {};\n      cognitoParams.Logins[this._providerName] = this._providerUserToken;\n    }\n\n    this._credentials = new AWS.CognitoIdentityCredentials(cognitoParams);\n\n    // update AWS credentials\n    AWS.config.credentials = this._credentials.refresh(function(error) {\n      if (error) {\n        callback(new AuthException(error));\n        return;\n      }\n\n      this._identityId = this._credentials.identityId;\n\n      AWS.config.update({\n        accessKeyId: this._credentials.accessKeyId,\n        secretAccessKey: this._credentials.secretAccessKey,\n        sessionToken: this._credentials.sessionToken,\n        region: defaultRegion, // restore to default region\n      });\n\n      callback(null, this);\n    }.bind(this));\n  }\n\n  /**\n   * @param {String} identityPoolId\n   * @returns {String}\n   * @private\n   */\n  static _getRegionFromIdentityPoolId(identityPoolId) {\n    return identityPoolId.split(':')[0];\n  }\n\n  /**\n   * @returns {String}\n   */\n  get providerName() {\n    return this._providerName;\n  }\n\n  /**\n   * @returns {String}\n   */\n  get providerUserToken() {\n    return this._providerUserToken;\n  }\n\n  /**\n   * @returns {String}\n   */\n  get providerUserId() {\n    return this._providerUserId;\n  }\n\n  /**\n   * @returns {String}\n   */\n  get identityId() {\n    return this._identityId;\n  }\n\n  /**\n   * @returns {Object}\n   */\n  get credentials() {\n    return this._credentials;\n  }\n\n  /**\n   * @returns {Boolean}\n   */\n  get isAnonymous() {\n    return this._isAnonymous;\n  }\n\n  /**\n   * @param {UserProvider} userProvider\n   */\n  set userProvider(userProvider) {\n    this._userProvider = userProvider;\n  }\n\n  /**\n   * @param {Function} callback\n   */\n  getUser(callback) {\n    if (this.isAnonymous) {\n      callback(null);\n    }\n\n    if (this._user === null) {\n      this._userProvider.loadUserByIdentityId(this.identityId, function(user) {\n        if (user) {\n          this._user = user;\n        }\n\n        callback(user);\n      }.bind(this));\n    } else {\n      callback(this._user);\n    }\n  }\n}\n"
   },
   {
     "kind": "class",
@@ -1371,11 +1426,11 @@
   },
   {
     "kind": "method",
-    "static": false,
+    "static": true,
     "variation": null,
     "name": "_getRegionFromIdentityPoolId",
     "memberof": "lib/Token.js~Token",
-    "longname": "lib/Token.js~Token#_getRegionFromIdentityPoolId",
+    "longname": "lib/Token.js~Token._getRegionFromIdentityPoolId",
     "access": "private",
     "description": null,
     "lineNumber": 84,

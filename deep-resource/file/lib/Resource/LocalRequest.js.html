@@ -13,7 +13,9 @@
 <body class="layout-container">
 
 <header>
-  <a href="../../">Home</a>
+  <a href="./">Home</a>
+  <a href="identifiers.html">Identifier</a>
+  <a href="source.html">Source</a>
   
   <a data-ice="repoURL" href="https://github.com/MitocGroup/deep.git" class="repo-url-github">Repository</a>
   <div class="search-box">
@@ -68,14 +70,14 @@ export class LocalRequest extends Request {
 
   /**
    * @param {Function} callback
-   * @returns {LocalRequest}
+   * @returns {LocalRequest|*}
    */
   _send(callback = null) {
     let actionType = this._action.type;
 
     if (actionType === Action.LAMBDA) {
       let data = {
-        lambda: this._action.source,
+        lambda: this._action.source.original,
         payload: this.payload,
         method: this._method,
       };
@@ -86,7 +88,7 @@ export class LocalRequest extends Request {
           callback &amp;&amp; callback(new SuperagentResponse(this, response, error));
         }.bind(this));
     } else {
-      return this.prototype._send(...arguments);
+      return this.prototype.useNative()._send(...arguments);
     }
 
     return this;

@@ -23,7 +23,7 @@ cov_num=0
 
 echo -n '{' > ${libs_file}
 
-for lib in ${path}/*; do
+for lib in ${path}/deep-*; do
   if [ -d ${lib} ]; then
     lib_coverage=$(cat ${lib}/coverage.json | grep coverage | awk -F': "' '{print $2;}' | awk -F'%' '{print $1;}')
 

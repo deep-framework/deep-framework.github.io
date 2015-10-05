@@ -13,7 +13,9 @@
 <body class="layout-container">
 
 <header>
-  <a href="../../">Home</a>
+  <a href="./">Home</a>
+  <a href="identifiers.html">Identifier</a>
+  <a href="source.html">Source</a>
   
   <a data-ice="repoURL" href="https://github.com/MitocGroup/deep.git" class="repo-url-github">Repository</a>
   <div class="search-box">
@@ -70,6 +72,26 @@ export class Instance {
     this._actions = null;
     this._localBackend = false;
     this._cache = null;
+
+    this._securityCredentials = {
+      accessKeyId: null,
+      secretAccessKey: null,
+      sessionToken: null,
+    };
+  }
+
+  /**
+   * @returns {Object}
+   */
+  get securityCredentials() {
+    return this._securityCredentials;
+  }
+
+  /**
+   * @param {Object} credentials
+   */
+  set securityCredentials(credentials) {
+    this._securityCredentials = credentials;
   }
 
   /**

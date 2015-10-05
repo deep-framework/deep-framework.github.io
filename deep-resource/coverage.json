@@ -1,11 +1,11 @@
 {
-  "coverage": "93.9%",
-  "expectCount": 82,
-  "actualCount": 77,
+  "coverage": "94.25%",
+  "expectCount": 87,
+  "actualCount": 82,
   "files": {
     "lib/Resource/Action.js": {
-      "expectCount": 11,
-      "actualCount": 11,
+      "expectCount": 12,
+      "actualCount": 12,
       "undocumentLines": []
     },
     "lib/Resource/Exception/CachedRequestException.js": {
@@ -21,8 +21,8 @@
       "undocumentLines": []
     },
     "lib/Resource/Instance.js": {
-      "expectCount": 11,
-      "actualCount": 11,
+      "expectCount": 13,
+      "actualCount": 13,
       "undocumentLines": []
     },
     "lib/Resource/LocalRequest.js": {
@@ -56,8 +56,8 @@
       "undocumentLines": []
     },
     "lib/Resource/Request.js": {
-      "expectCount": 18,
-      "actualCount": 18,
+      "expectCount": 20,
+      "actualCount": 20,
       "undocumentLines": []
     },
     "lib/Resource.js": {

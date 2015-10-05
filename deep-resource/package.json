@@ -1,6 +1,6 @@
 {
   "name": "deep-resource",
-  "version": "0.0.62",
+  "version": "0.0.65",
   "description": "DEEP Resource Library",
   "keywords": [
     "Digital End-To-End Enterprise Platform",
@@ -63,7 +63,9 @@
   "dependencies": {
     "deep-kernel": "*",
     "deep-core": "*",
-    "superagent": "1.2.*"
+    "superagent": "1.2.*",
+    "aws4": "1.0.*",
+    "parse-url": "1.0.*"
   },
   "devDependencies": {
     "aws-sdk": "2.1.*",

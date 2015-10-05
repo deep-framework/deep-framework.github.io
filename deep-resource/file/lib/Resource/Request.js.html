@@ -13,7 +13,9 @@
 <body class="layout-container">
 
 <header>
-  <a href="../../">Home</a>
+  <a href="./">Home</a>
+  <a href="identifiers.html">Identifier</a>
+  <a href="source.html">Source</a>
   
   <a data-ice="repoURL" href="https://github.com/MitocGroup/deep.git" class="repo-url-github">Repository</a>
   <div class="search-box">
@@ -62,6 +64,8 @@ import Http from &apos;superagent&apos;;
 import AWS from &apos;aws-sdk&apos;;
 import {MissingCacheImplementationException} from &apos;./Exception/MissingCacheImplementationException&apos;;
 import {CachedRequestException} from &apos;./Exception/CachedRequestException&apos;;
+import aws4 from &apos;aws4&apos;;
+import parseUrl from &apos;parse-url&apos;;
 
 /**
  * Action request instance
@@ -81,6 +85,23 @@ export class Request {
     this._cacheImpl = null;
     this._cacheTtl = Request.TTL_FOREVER;
     this._cached = false;
+
+    this._native = false;
+  }
+
+  /**
+   * @returns {Boolean}
+   */
+  get native() {
+    return this._native;
+  }
+
+  /**
+   * @returns {Request}
+   */
+  useDirectCall() {
+    this._native = true;
+    return this;
   }
 
   /**
@@ -167,7 +188,7 @@ export class Request {
    * @returns {String}
    * @private
    */
-  _stringifyResponse(response) {
+  static _stringifyResponse(response) {
     return JSON.stringify({
       _class: response.constructor.name,
       data: response.rawData,
@@ -187,7 +208,7 @@ export class Request {
       throw new CachedRequestException(`Unable to unpack cached JSON object from ${rawData}`);
     }
 
-    let ResponseImpl = this._chooseResponseImpl(response._class);
+    let ResponseImpl = Request._chooseResponseImpl(response._class);
 
     if (!ResponseImpl) {
       throw new Exception(`Unknown Response implementation ${response._class}`);
@@ -201,7 +222,7 @@ export class Request {
    * @returns {*}
    * @private
    */
-  _chooseResponseImpl(className) {
+  static _chooseResponseImpl(className) {
     let implMap = {};
 
     implMap[Response.name] = Response;
@@ -277,7 +298,7 @@ export class Request {
       }
 
       this._send(function(response) {
-        cache.set(cacheKey, this._stringifyResponse(response), this._cacheTtl, function(error, result) {
+        cache.set(cacheKey, Request._stringifyResponse(response), this._cacheTtl, function(error, result) {
           if (!result) {
             error = `Unable to persist request cache under key ${cacheKey}`;
           }
@@ -299,35 +320,89 @@ export class Request {
    * @param {Function} callback
    * @returns {Request}
    */
-  _send(callback = null) {
-    let actionType = this._action.type;
-
-    if (actionType === Action.LAMBDA) {
-      let invocationParameters = {
-        FunctionName: this._action.source,
-        Payload: JSON.stringify(this.payload),
-      };
-
-      // @todo: set retries in a smarter way...
-      AWS.config.maxRetries = 3;
-
-      this._lambda = new AWS.Lambda({
-        region: this._action.region,
-      });
-
-      this._lambda.invoke(invocationParameters, function(error, data) {
-        callback &amp;&amp; callback(new LambdaResponse(this, data, error));
-      }.bind(this));
-    } else if (actionType === Action.EXTERNAL) {
-      Http[this._method.toLowerCase()](this._action.source)
-        .send(this.payload)
-        .end(function(error, response) {
-          callback &amp;&amp; callback(new SuperagentResponse(this, response, error));
-        }.bind(this));
-    } else {
-      // @todo: implement other types...
-      throw new Exception(`Request of type ${actionType} is not implemented`);
+  _send(callback = () =&gt; null) {
+    if (!this._native) {
+      return this._sendThroughApi(callback);
     }
+
+    switch(this._action.type) {
+      case Action.LAMBDA:
+        this._sendLambda(callback);
+        break;
+      case Action.EXTERNAL:
+        this._sendExternal(callback);
+        break;
+      default: throw new Exception(`Request of type ${this._action.type} is not implemented`);
+    }
+
+    return this;
+  }
+
+  /**
+   * @param {Function} callback
+   * @returns {Request}
+   * @private
+   */
+  _sendThroughApi(callback = () =&gt; null) {
+    let urlParts = parseUrl(this._action.source.api);
+
+    let apiHost = urlParts.resource;
+    let apiPath = urlParts.pathname ? urlParts.pathname : &apos;/&apos;;
+    let apiQueryString = urlParts.search ? `?${urlParts.search}` : &apos;&apos;;
+
+    let signature = aws4.sign({
+      host: apiHost,
+      path: `${apiPath}${apiQueryString}`,
+    }, this._action.resource.securityCredentials);
+
+    Http[this._method.toLowerCase()](this._action.source.api)
+      .set(&apos;Host&apos;, signature.headers.Host)
+      .set(&apos;X-Amz-Date&apos;, signature.headers[&apos;X-Amz-Date&apos;])
+      .set(&apos;Authorization&apos;, signature.headers.Authorization)
+      .send(this.payload)
+      .end(function(error, response) {
+        callback(new SuperagentResponse(this, response, error));
+      }.bind(this));
+
+    return this;
+  }
+
+  /**
+   * @param {Function} callback
+   * @returns {Request}
+   * @private
+   */
+  _sendLambda(callback = () =&gt; null) {
+    // @todo: set retries in a smarter way...
+    AWS.config.maxRetries = 3;
+
+    this._lambda = new AWS.Lambda({
+      region: this._action.region,
+    });
+
+    let invocationParameters = {
+      FunctionName: this._action.source.original,
+      Payload: JSON.stringify(this.payload),
+    };
+
+    this._lambda.invoke(invocationParameters, function(error, data) {
+      callback(new LambdaResponse(this, data, error));
+    }.bind(this));
+
+    return this;
+  }
+
+  /**
+   * @param {Function} callback
+   * @returns {Request}
+   * @private
+   */
+  _sendExternal(callback = () =&gt; null) {
+    Http[this._method.toLowerCase()](this._action.source.original)
+      .send(this.payload)
+      .end(function(error, response) {
+        callback(new SuperagentResponse(this, response, error));
+      }.bind(this));
 
     return this;
   }

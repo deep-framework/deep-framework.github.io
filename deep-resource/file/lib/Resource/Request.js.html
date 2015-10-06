@@ -325,7 +325,7 @@ export class Request {
       return this._sendThroughApi(callback);
     }
 
-    switch(this._action.type) {
+    switch (this._action.type) {
       case Action.LAMBDA:
         this._sendLambda(callback);
         break;

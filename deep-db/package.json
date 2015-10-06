@@ -1,6 +1,6 @@
 {
   "name": "deep-db",
-  "version": "0.0.76",
+  "version": "0.0.77",
   "description": "DEEP Database Library",
   "keywords": [
     "Digital End-To-End Enterprise Platform",
@@ -64,6 +64,7 @@
     "joi": "6.6.*"
   },
   "devDependencies": {
+    "aws-sdk": "2.1.*",
     "local-dynamo": "MitocGroup/local-dynamo",
     "dynalite": "0.16.*",
     "chai": "3.2.*",

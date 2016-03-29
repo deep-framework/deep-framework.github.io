@@ -1,122 +1,89 @@
-<h1>DEEP Framework</h1>
+<h1>DEEP Framework </h1>
 
 <p><a href="https://npmjs.org/package/deep-framework"><img src="https://camo.githubusercontent.com/1448d630cfa6d19735bdcbbf705c4769cd919621/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f646565702d6672616d65776f726b2e737667" alt="NPM Version" data-canonical-src="https://img.shields.io/npm/v/deep-framework.svg" style="max-width:100%;"></a><br>
 <a href="https://travis-ci.org/MitocGroup/deep-framework"><img src="https://camo.githubusercontent.com/52ddec15d0db7ecaa36b99b349958e8f390ed6b2/68747470733a2f2f7472617669732d63692e6f72672f4d69746f6347726f75702f646565702d6672616d65776f726b2e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/MitocGroup/deep-framework.svg?branch=master" style="max-width:100%;"></a><br>
 <a href="https://www.codacy.com/app/MitocGroup/deep-framework"><img src="https://camo.githubusercontent.com/aacc7c8a0b4ff69647948512752ab5b60916dab9/68747470733a2f2f6170692e636f646163792e636f6d2f70726f6a6563742f62616467652f636f7665726167652f3832336430346139306334613466633838386536323831376533653832306265" alt="Codacy Badge" data-canonical-src="https://api.codacy.com/project/badge/coverage/823d04a90c4a4fc888e62817e3e820be" style="max-width:100%;"></a><br>
 <a href="http://docs.deep.mg"><img src="https://camo.githubusercontent.com/0f626371fdfd8ca180a4d12888dac6c7292ac505/687474703a2f2f646f63732e646565702e6d672f62616467652e737667" alt="API Docs" data-canonical-src="http://docs.deep.mg/badge.svg" style="max-width:100%;"></a></p>
 
-<p><code>DEEP Framework</code> is a full-stack web framework that abstracts web apps and web services from specific cloud providers. <br>
-This framework enables developers build cloud-native applications or platforms using <br>
-<a href="https://en.wikipedia.org/wiki/Microservices">microservices architecture</a> in a completely <br>
-<a href="https://github.com/MitocGroup/deep-framework#appendix-a-serverless-architecture">serverless approach</a>.</p>
+<p>DEEP Framework is a full-stack web framework for building cloud-native web applications.</p>
 
 <blockquote>
-<p>At this moment only <a href="https://aws.amazon.com">Amazon Web Services</a> is supported. Developers are encouraged to add support <br>
-for <a href="https://azure.microsoft.com">Microsoft Azure</a>, <a href="https://cloud.google.com/">Google Cloud Platform</a>, and so on.</p>
+<p>This framework is a core component of a larger ecosystem, called<br>
+<a href="https://github.com/MitocGroup/deep-framework/blob/master/docs/index.md">Digital Enterprise End-to-end Platform</a>.</p>
 </blockquote>
 
-<p>DEEP Framework is a core component of a larger ecosystem, called<br>
-<a href="https://github.com/MitocGroup/deep-framework/blob/master/README.md#appendix-b-deep-ecosystem">Digital Enterprise End-to-end Platform</a>.</p>
+<p>Using DEEP Framework, developers get out-of-the-box:</p>
 
-<h2>Getting Started <a href="https://gitter.im/MitocGroup/deep-framework"><img src="https://camo.githubusercontent.com/1d02cab2e412a6adfa816e1e2413315b22ee3fb6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2545322538412541412532306769747465722532302d6a6f696e253230636861742532302545322538362539322d627269676874677265656e2e737667" alt="Join char on gitter.im" data-canonical-src="https://img.shields.io/badge/%E2%8A%AA%20gitter%20-join%20chat%20%E2%86%92-brightgreen.svg" style="max-width:100%;"></a>
-</h2>
+<ul>
+<li>streamlined "production-like" development environment</li>
+<li>enterprise-level platform using microservices architecture</li>
+<li>virtually infinite scalability with zero devops (aka <em>serverless computing</em>)</li>
+<li>abstracted use of web services from cloud providers (e.g. AWS, GCP, etc.)</li>
+</ul>
 
-<p><code>DEEP Framework</code> can be used as a module in front-end or back-end. To learn more, scroll down to <br>
-<a href="https://github.com/MitocGroup/deep-framework/blob/master/README.md#what-is-deep-framework-">What is DEEP Framework?</a></p>
+<blockquote>
+<p><a href="https://aws.amazon.com">Amazon Web Services</a> is the only supported cloud provider at the moment.<br>
+Help needed to add support for <a href="https://cloud.google.com/">Google Cloud Platform</a>,<br>
+<a href="https://azure.microsoft.com">Microsoft Azure</a>, and others.</p>
+</blockquote>
 
-<p>To see the power of <code>DEEP Framework</code>, execute the following 4 simple steps in command line:</p>
+<p>Documentation is available at <a href="http://docs.deep.mg">docs.deep.mg</a>.</p>
 
-<ol>
-<li>
+<h2>Getting Started</h2>
+
 <p>Install DEEP CLI, also known as deepify:</p>
 
-<p><code>npm install deepify -g</code> </p>
+<div class="highlight highlight-source-shell"><pre>npm install deepify -g</pre></div>
 
 <blockquote>
-<p>deepify is a collection of tools that empower developers and devops engineers to automate<br>
-the management of web apps built on top of DEEP ecosystem.</p>
-</blockquote>
-
-<p><em>Note: If you want to use <code>deepify</code> on Windows, please follow the steps from<br>
+<p>If you want to use <code>deepify</code> on Windows, please follow the steps from<br>
 <a href="https://github.com/MitocGroup/deep-framework/blob/master/docs/windows.md">Windows Configuration</a><br>
 before running <code>npm install deepify -g</code> and make sure all <code>npm</code> and <code>deepify</code> commands are executed<br>
-inside Git Bash.</em></p>
-</li>
-<li>
+inside Git Bash.</p>
+</blockquote>
+
 <p>Using deepify, dump locally the helloworld example:</p>
 
-<p><code>deepify helloworld ~/deep-hello-world</code></p>
+<div class="highlight highlight-source-shell"><pre>deepify helloworld <span class="pl-k">~</span>/deep-hello-world</pre></div>
 
 <blockquote>
-<p>deepify will clone the repository from GitHub and pull all the dependencies in one place.</p>
+<p>This command is equivalent to the generic command used globally:<br>
+<code>deepify install github://MitocGroup/deep-microservices-helloworld ~/deep-hello-world</code></p>
 </blockquote>
-</li>
-<li>
-<p>Using deepify, run locally the helloworld example:</p>
 
-<p><code>deepify server ~/deep-hello-world -o</code></p>
+<p>Next, run locally the helloworld project:</p>
+
+<div class="highlight highlight-source-shell"><pre>deepify server <span class="pl-k">~</span>/deep-hello-world -o</pre></div>
 
 <blockquote>
-<p>deepify launches a web server that can be used for local development, without making calls<br>
-to web services from cloud providers like AWS.</p>
+<p>When this step is finished, you can open in your browser the link <em>http://localhost:8000</em><br>
+and enjoy the helloworld project running locally.</p>
 </blockquote>
-</li>
-<li>
-<p>Using deepify, deploy to AWS the helloworld example:</p>
 
-<p><code>deepify deploy ~/deep-hello-world</code></p>
+<p>Finally, deploy the helloworld to cloud provider:</p>
+
+<div class="highlight highlight-source-shell"><pre>deepify deploy <span class="pl-k">~</span>/deep-hello-world</pre></div>
 
 <blockquote>
-<p>deepify provisions the infrastructure and deploys the web app, empowering developers and<br>
-devops engineers to automate the process.</p>
+<p>Amazon CloudFront distribution takes up to 20 minutes to provision, therefore don’t worry<br>
+if it returns an HTTP error in the first couple of minutes.</p>
 </blockquote>
 
-<p><em>Note: Amazon CloudFront distribution takes up to 20 minutes to provision, <br>
-therefore don’t worry if it returns an HTTP error in the first couple of minutes.</em></p>
-</li>
-</ol>
+<h2>What is DEEP Framework?</h2>
 
-<p>To learn more about helloworld example, or other web apps that run in production, scroll down to <br>
-<a href="https://github.com/MitocGroup/deep-framework/blob/master/README.md#who-is-using-deep-framework-">Who is using DEEP Framework?</a></p>
-
-<h3>Additional Notes</h3>
-
-<p>Note 1: To use <code>DEEP Framework</code> globally, just run in command line:</p>
-
-<pre><code>npm install deep-framework -g
-</code></pre>
-
-<p>Note 2: Alternatively, to use <code>DEEP Framework</code> as dependency, include it in <code>package.json</code> file. For example:</p>
-
-<pre><code>{
-  "name": "say-hello-world",
-  "version": "0.0.1",
-  "description": "AWS Lambda that says hello to the world",
-  "dependencies": {
-    "deep-framework": "^1.x.x",
-    ...
-  },
-  ...
-}
-</code></pre>
-
-<h2>What is DEEP Framework? <a href="https://gitter.im/MitocGroup/deep-framework"><img src="https://camo.githubusercontent.com/1d02cab2e412a6adfa816e1e2413315b22ee3fb6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2545322538412541412532306769747465722532302d6a6f696e253230636861742532302545322538362539322d627269676874677265656e2e737667" alt="Join char on gitter.im" data-canonical-src="https://img.shields.io/badge/%E2%8A%AA%20gitter%20-join%20chat%20%E2%86%92-brightgreen.svg" style="max-width:100%;"></a>
-</h2>
-
-<p><code>DEEP Framework</code> is a nodejs package that is published on npmjs: <a href="https://www.npmjs.com/package/deep-framework">https://www.npmjs.com/package/deep-framework</a>.</p>
+<p>DEEP Framework is a nodejs package that is published on npmjs: <a href="https://www.npmjs.com/package/deep-framework">https://www.npmjs.com/package/deep-framework</a>.</p>
 
 <blockquote>
-<p>If you are new to node and npm, check out <a href="http://howtonode.org/how-to-install-nodejs">how to install nodejs</a> tutorial.</p>
+<p>If you are new to node and npm, check out the tutorial <a href="http://howtonode.org/how-to-install-nodejs">how to install nodejs</a>.</p>
 </blockquote>
 
-<p><code>DEEP Framework</code> is a nodejs package. In fact it's a collection of nodejs packages, also known as<br>
-<code>DEEP Abstracted Libraries</code>. Here below is the complete list:</p>
+<p>In fact, this framework is a collection of nodejs packages, also identifiable as abstracted libraries:</p>
 
 <table>
 <thead>
 <tr>
-<th>DEEP Abstracted Library</th>
-<th><a href="http://docs.deep.mg/">Api Docs</a></th>
+<th><a href="https://www.npmjs.com/package/deep-framework">DEEP Framework</a></th>
+<th><a href="http://docs.deep.mg">API Docs</a></th>
 <th>Abstracted Web Service(s)</th>
 </tr>
 </thead>
@@ -189,197 +156,68 @@ therefore don’t worry if it returns an HTTP error in the first couple of minut
 </tbody>
 </table>
 
-<h2>Who is using DEEP Framework? <a href="https://gitter.im/MitocGroup/deep-framework"><img src="https://camo.githubusercontent.com/1d02cab2e412a6adfa816e1e2413315b22ee3fb6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2545322538412541412532306769747465722532302d6a6f696e253230636861742532302545322538362539322d627269676874677265656e2e737667" alt="Join char on gitter.im" data-canonical-src="https://img.shields.io/badge/%E2%8A%AA%20gitter%20-join%20chat%20%E2%86%92-brightgreen.svg" style="max-width:100%;"></a>
-</h2>
+<h2>Who is using DEEP Framework?</h2>
 
-<p>There are couple examples / web apps that are using <code>DEEP Framework</code> at their core:</p>
+<p>There are couple examples / web applications that are built on top of DEEP Framework:</p>
 
 <h3>DEEP Hello World</h3>
 
-<blockquote>
-<p>DEEP Hello World (<a href="https://github.com/MitocGroup/deep-microservices-helloworld">https://github.com/MitocGroup/deep-microservices-helloworld</a>) is a web app<br>
+<p><a href="https://github.com/MitocGroup/deep-microservices-helloworld">DEEP Hello World</a> is a web app<br>
 that show cases a full stack example of using DEEP Microservices in the context of Platform-as-a-Service.<br>
-Developers can either fork this repository or <code>npm install deepify -g</code> (<a href="https://www.npmjs.com/package/deepify">https://www.npmjs.com/package/deepify</a>)<br>
-and run in the command line <code>deepify helloworld ~/deep-hello-world</code>.</p>
-</blockquote>
+Developers can either fork this repository or <code>npm install deepify -g</code> and run in the command line<br>
+<code>deepify helloworld ~/deep-hello-world</code>.</p>
 
 <h3>DEEP Todo App</h3>
 
-<blockquote>
-<p>DEEP Todo App (<a href="https://github.com/MitocGroup/deep-microservices-todo-app">https://github.com/MitocGroup/deep-microservices-todo-app</a>) is a web app inspired from <br>
-AngularJS TodoMVC Example (<a href="https://github.com/tastejs/todomvc/tree/master/examples/angularjs">https://github.com/tastejs/todomvc/tree/master/examples/angularjs</a>).<br>
-It reuses AngularJS module and integrates using <code>DEEP Framework</code> to streamline development and deployment<br>
+<p><a href="https://github.com/MitocGroup/deep-microservices-todo-app">DEEP Todo App</a> is a web app inspired from <br>
+<a href="https://github.com/tastejs/todomvc/tree/master/examples/angularjs">AngularJS TodoMVC Example</a>.<br>
+It reuses AngularJS module and integrates using DEEP Framework to streamline development and deployment<br>
 using cloud-based web services.</p>
-</blockquote>
 
 <h3>DEEP Marketplace</h3>
 
-<blockquote>
-<p>DEEP Marketplace (<a href="https://www.deep.mg">https://www.deep.mg</a>) is Software-as-a-Service, built on top of DEEP, that empowers customers<br>
-to choose functionality from listed microservices and deploy them together as an web app into their own <br>
-AWS accounts with just few clicks; as well as empowers developers to create and publish their microservices <br>
-and monetize them in similar approach to Apple's App Store.</p>
-</blockquote>
+<p><a href="https://www.deep.mg">DEEP Marketplace</a> is Software-as-a-Service for enterprise software, built on top of DEEP,<br>
+that empowers customers to choose functionality from listed microservices and deploy them together as an web app<br>
+into their own AWS accounts with just few clicks; as well as empowers developers to create and publish their <br>
+microservices and monetize them in similar approach to Apple's App Store.</p>
 
-<h2>How can I get involved? <a href="https://gitter.im/MitocGroup/deep-framework"><img src="https://camo.githubusercontent.com/1d02cab2e412a6adfa816e1e2413315b22ee3fb6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2545322538412541412532306769747465722532302d6a6f696e253230636861742532302545322538362539322d627269676874677265656e2e737667" alt="Join char on gitter.im" data-canonical-src="https://img.shields.io/badge/%E2%8A%AA%20gitter%20-join%20chat%20%E2%86%92-brightgreen.svg" style="max-width:100%;"></a>
-</h2>
+<h2>Developer Resources</h2>
 
-<h3>Feedback</h3>
-
-<p>We are eager to get your feedback, so please use whatever communication channel you prefer:</p>
+<p>Building an application with DEEP Framework?</p>
 
 <ul>
-<li><a href="https://github.com/MitocGroup/deep-framework/issues">github issues</a></li>
-<li><a href="https://gitter.im/MitocGroup/deep-framework">gitter chat room</a></li>
-<li><a href="mailto:feedback@deep.mg">deep email address</a></li>
+<li>Ask questions: <a href="https://stackoverflow.com/questions/tagged/deep-framework">https://stackoverflow.com/questions/tagged/deep-framework</a>
+</li>
+<li>Chat with us: <a href="https://gitter.im/MitocGroup/deep-framework">https://gitter.im/MitocGroup/deep-framework</a>
+</li>
+<li>Send messages: <a href="mailto:feedback@deep.mg">feedback@deep.mg</a>
+</li>
 </ul>
 
-<h3>Contribution</h3>
+<p>Interested in contributing to DEEP Framework?</p>
 
-<p>This project is open source, and we encourage developers to contribute. Here below is the easiest way to do so:</p>
+<ul>
+<li>Contributing: <a href="https://github.com/MitocGroup/deep-framework/blob/master/CONTRIBUTING.md">https://github.com/MitocGroup/deep-framework/blob/master/CONTRIBUTING.md</a>
+</li>
+<li>Issue tracker: <a href="https://github.com/MitocGroup/deep-framework/issues">https://github.com/MitocGroup/deep-framework/issues</a>
+</li>
+<li>Roadmap: <a href="https://github.com/MitocGroup/deep-framework/blob/master/ROADMAP.md">https://github.com/MitocGroup/deep-framework/blob/master/ROADMAP.md</a>
+</li>
+<li>Changelog: <a href="https://github.com/MitocGroup/deep-framework/blob/master/CHANGELOG.md">https://github.com/MitocGroup/deep-framework/blob/master/CHANGELOG.md</a>
+</li>
+</ul>
 
-<ol>
-<li>
-<a href="http://help.github.com/forking/">Fork</a> this repository in GitHub.</li>
-<li>Develop the feature in your repository. Make one or more commits to your repository in GitHub.</li>
-<li>Perform a <a href="http://help.github.com/pull-requests/">pull request</a> from your repository back into original repository in GitHub.</li>
-</ol>
-
-<p>Make sure you update <code>package.json</code> (or <code>deepkg.json</code>, depends on the use case) and put your name and contact information in contributors section. We would like to recognize the work and empower every contributor in creative ways :)</p>
-
-<h3>Roadmap</h3>
-
-<p>Our short-to-medium-term roadmap items, in order of descending priority:</p>
-
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Details</th>
-<th>Owner</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Implement deep-search</td>
-<td>Full text search service on top of <a href="https://aws.amazon.com/cloudsearch/">Amazon CloudSearch</a> and/or <a href="https://aws.amazon.com/elasticsearch-service/">Amazon Elasticsearch Service</a>
-</td>
-<td><a href="https://github.com/alexanderc">@alexanderc</a></td>
-</tr>
-<tr>
-<td>Implement <a href="https://en.wikipedia.org/wiki/Real_user_monitoring">RUM</a> with deep-search and deep-logs natively</td>
-<td>Add Real User Monitoring by logging all user actions and visualize them with an <a href="https://www.elastic.co/webinars/introduction-elk-stack">ELK stack</a>
-</td>
-<td><a href="https://github.com/mgoria">@mgoria</a></td>
-</tr>
-<tr>
-<td>Implement deep-security</td>
-<td>Security service on top of <a href="https://aws.amazon.com/iam/">Amazon IAM</a> and/or <a href="https://aws.amazon.com/cognito/">Amazon Cognito</a>
-</td>
-<td><a href="https://github.com/mgoria">@mgoria</a></td>
-</tr>
-<tr>
-<td>Implement blue-green deployment</td>
-<td>Deploy applications using <code>deepify</code> with zero downtime; Scalable to support multiple environments and multiple regions</td>
-<td><a href="https://github.com/alexanderc">@alexanderc</a></td>
-</tr>
-<tr>
-<td>Implement deep-db "eventual consistency"</td>
-<td>Achieve "eventual consistency" by offloading data to <a href="https://aws.amazon.com/sqs/">SQS</a> as the default option</td>
-<td><a href="https://github.com/alexanderc">@alexanderc</a></td>
-</tr>
-<tr>
-<td>Improve deep-db "strong consistency"</td>
-<td>Achieve "strong consistency" by increasing Reads/Writes per second in runtime (as other option for special DB operations)</td>
-<td><a href="https://github.com/mgoria">@mgoria</a></td>
-</tr>
-<tr>
-<td>Integrate deep-db with deep-cache natively</td>
-<td>Cache fetched data by default using deep-cache library</td>
-<td><a href="https://github.com/alexanderc">@alexanderc</a></td>
-</tr>
-<tr>
-<td>Implement deep-notification</td>
-<td>Push notification service on top of <a href="https://aws.amazon.com/sns/">SNS</a> that supports push to mobile devices, web browsers, email and sms.</td>
-<td><a href="https://github.com/alexanderc">@alexanderc</a></td>
-</tr>
-<tr>
-<td>Implement deep-queue</td>
-<td>Queue data into <a href="https://aws.amazon.com/sqs/">SQS</a> and/or <a href="https://aws.amazon.com/kinesis/">Kinesis</a>
-</td>
-<td><a href="https://github.com/mgoria">@mgoria</a></td>
-</tr>
-<tr>
-<td>Implement deep-event</td>
-<td>Event manager service using Lambda scheduling, Kinesis stream, Dynamo streaming, SQS, etc.</td>
-<td><a href="https://github.com/mgoria">@mgoria</a></td>
-</tr>
-<tr>
-<td>Implement deep-cache</td>
-<td>Cache service on top of <a href="https://aws.amazon.com/elasticache/">Elasticache</a> (<a href="http://redis.io">Redis</a> engine) inside deep-resource (e.g. AWS Lambda)</td>
-<td><a href="https://github.com/alexanderc">@alexanderc</a></td>
-</tr>
-<tr>
-<td>Improve documentation for each deep-* library</td>
-<td>Update docs for deep libraries and development tools</td>
-<td>
-<a href="https://github.com/alexanderc">@alexanderc</a> <a href="https://github.com/mgoria">@mgoria</a>
-</td>
-</tr>
-</tbody>
-</table>
-
-<h3>Changelog</h3>
-
-<p>Changelog files are located in <code>/changelog</code> folder.</p>
-
-<blockquote>
-<p>See <a href="https://github.com/MitocGroup/deep-framework/blob/master/CHANGELOG.md">CHANGELOG.md</a> for latest changelog.</p>
-</blockquote>
-
-<h3>License</h3>
-
-<p>This repository can be used under the MIT license.</p>
-
-<blockquote>
-<p>See <a href="https://github.com/MitocGroup/deep-framework/blob/master/LICENSE">LICENSE</a> for more details.</p>
-</blockquote>
-
-<h3>Sponsors</h3>
+<h2>Sponsors</h2>
 
 <p>This repository is being sponsored by:</p>
 
-<blockquote>
-<p><a href="http://www.mitocgroup.com">Mitoc Group</a></p>
-</blockquote>
+<ul>
+<li><a href="https://www.mitocgroup.com">Mitoc Group</a></li>
+<li><a href="https://www.deep.mg">DEEP Marketplace</a></li>
+</ul>
 
-<h2>What else is relevant? <a href="https://gitter.im/MitocGroup/deep-framework"><img src="https://camo.githubusercontent.com/1d02cab2e412a6adfa816e1e2413315b22ee3fb6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2545322538412541412532306769747465722532302d6a6f696e253230636861742532302545322538362539322d627269676874677265656e2e737667" alt="Join char on gitter.im" data-canonical-src="https://img.shields.io/badge/%E2%8A%AA%20gitter%20-join%20chat%20%E2%86%92-brightgreen.svg" style="max-width:100%;"></a>
-</h2>
-
-<p><code>Digital Enterprise End-to-end Platform</code>, also known as <code>DEEP</code>, is low cost and low maintenance <br>
-<a href="https://en.wikipedia.org/wiki/Platform_as_a_service">Platform-as-a-Service</a> powered by abstracted web services <br>
-from cloud providers like <a href="https://aws.amazon.com">Amazon Web Services</a>. This approach has been labeled as<br>
-<a href="https://github.com/MitocGroup/deep-framework/blob/master/README.md#appendix-a-serverless-architecture">Serverless Architecture</a>.</p>
-
-<h3>Appendix A: Serverless Architecture</h3>
-
-<p><a href="https://raw.githubusercontent.com/MitocGroup/deep-framework/master/docs/deep-architecture.png" target="_blank"><img src="https://raw.githubusercontent.com/MitocGroup/deep-framework/master/docs/deep-architecture.png" alt="Digital Enterprise End-to-end Platform aka DEEP" style="max-width:100%;"></a></p>
-
-<p><code>DEEP</code> is an ecosystem of <a href="https://www.deep.mg">DEEP Marketplace</a>, <br>
-<a href="https://github.com/MitocGroup/deep-framework">DEEP Framework</a> and <a href="https://www.npmjs.com/package/deepify">DEEP CLI</a>,<br>
-also known as <a href="https://www.npmjs.com/package/deepify">deepify</a>. It enables developers build serverless applications <br>
-using abstracted services from cloud providers like <a href="https://aws.amazon.com">Amazon Web Services</a>.</p>
-
-<h3>Appendix B: DEEP Ecosystem</h3>
-
-<p><a href="https://raw.githubusercontent.com/MitocGroup/deep-framework/master/docs/deep-ecosystem.png" target="_blank"><img src="https://raw.githubusercontent.com/MitocGroup/deep-framework/master/docs/deep-ecosystem.png" alt="Digital Enterprise End-to-end Platform aka DEEP" style="max-width:100%;"></a></p>
-
-<p><code>DEEP</code> aims to remove the heavy lifting from enterprise software through microservices architecture, where developers<br>
-(let’s label them <code>lego producers</code>) focus only to build microservices or microapplications (let’s label them <code>lego pieces</code>),<br>
-while the platform does the rest: comes pre-built and pre-scaled, low-cost and low-maintenance, very secure and very fast. <br>
-Customers (let’s label them <code>lego consumers</code>) will go to the marketplace, choose the microservices they need and deploy them <br>
-as web apps into their own accounts on AWS (or other cloud providers).</p>
+<p>The code can be used under the MIT license:</p>
 
 <blockquote>
-<p>In summary: We empower lego consumers to license curated lego pieces from a marketplace of lego producers.</p>
+<p>See <a href="https://github.com/MitocGroup/deep-framework/blob/master/LICENSE">LICENSE</a> for more details.</p>
 </blockquote>

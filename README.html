@@ -27,11 +27,36 @@ Help needed to add support for <a href="https://cloud.google.com/">Google Cloud 
 <a href="https://azure.microsoft.com">Microsoft Azure</a>, and others.</p>
 </blockquote>
 
-<p>Documentation is available at <a href="http://docs.deep.mg">docs.deep.mg</a>.</p>
+<p>Documentation is available as <a href="https://github.com/MitocGroup/deep-framework/blob/master/docs/framework.md">Developer Guide</a><br>
+and <a href="http://docs.deep.mg">API Guide</a>.</p>
+
+<p>Learn hands-on how to build and deploy cloud-native web applications from<br>
+<a href="https://blog.mitocgroup.com/building-enterprise-level-web-applications-on-aws-lambda-with-the-deep-framework-dd81719b0dff">this blog post</a><br>
+and <a href="https://www.youtube.com/playlist?list=PLPGfD-tGOl7uNDXo_eMN1odMZflYVu2n9">this tutorial video</a>.</p>
 
 <h2>Getting Started</h2>
 
-<p>Install DEEP CLI, also known as deepify:</p>
+<h3>Step 1. Pre-requisites</h3>
+
+<ul class="task-list">
+<li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" checked disabled> <a href="https://www.youtube.com/watch?v=WviHsoz8yHk">Create an Amazon Web Services account</a>
+</li>
+<li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" checked disabled> <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html">Configure AWS Command Line Interface</a>
+</li>
+<li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" checked disabled> <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Get Started - Installing Git</a>
+</li>
+<li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" checked disabled> <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html">JDK 8 and JRE 8 Installation Start Here</a>
+</li>
+<li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" checked disabled> <a href="https://github.com/creationix/nvm#install-script">Install nvm</a> and <a href="https://github.com/creationix/nvm#usage">use node v4.3+</a>
+</li>
+<li class="task-list-item">
+<input type="checkbox" class="task-list-item-checkbox" disabled> Install DEEP CLI, also known as <code>deepify</code>:</li>
+</ul>
 
 <div class="highlight highlight-source-shell"><pre>npm install deepify -g</pre></div>
 
@@ -42,168 +67,77 @@ before running <code>npm install deepify -g</code> and make sure all <code>npm</
 inside Git Bash.</p>
 </blockquote>
 
-<p>Using deepify, dump locally the helloworld example:</p>
+<h3>Step 2. Install Microservice(s) Locally</h3>
 
-<div class="highlight highlight-source-shell"><pre>deepify helloworld <span class="pl-k">~</span>/deep-hello-world</pre></div>
+<div class="highlight highlight-source-shell"><pre>deepify install github://MitocGroup/deep-microservices-helloworld <span class="pl-k">~</span>/deep-microservices-helloworld</pre></div>
 
 <blockquote>
-<p>This command is equivalent to the generic command used globally:<br>
-<code>deepify install github://MitocGroup/deep-microservices-helloworld ~/deep-hello-world</code></p>
+<p>Path parameter in all <code>deepify</code> commands is optional and if not specified, assumes current<br>
+working directory. Therefore you can skip <code>~/deep-microservices-helloworld</code> by executing<br>
+<code>mkdir ~/deep-microservices-helloworld &amp;&amp; cd ~/deep-microservices-helloworld</code> before <code>deepify install</code>.</p>
 </blockquote>
 
-<p>Next, run locally the helloworld project:</p>
+<h3>Step 3. Run Microservice(s) in Development</h3>
 
-<div class="highlight highlight-source-shell"><pre>deepify server <span class="pl-k">~</span>/deep-hello-world -o</pre></div>
+<div class="highlight highlight-source-shell"><pre>deepify server <span class="pl-k">~</span>/deep-microservices-helloworld -o</pre></div>
 
 <blockquote>
 <p>When this step is finished, you can open in your browser the link <em>http://localhost:8000</em><br>
-and enjoy the helloworld project running locally.</p>
+and enjoy the deep-microservices-helloworld running locally.</p>
 </blockquote>
 
-<p>Finally, deploy the helloworld to cloud provider:</p>
+<h3>Step 4. Deploy Microservice(s) to Production</h3>
 
-<div class="highlight highlight-source-shell"><pre>deepify deploy <span class="pl-k">~</span>/deep-hello-world</pre></div>
+<div class="highlight highlight-source-shell"><pre>deepify deploy <span class="pl-k">~</span>/deep-microservices-helloworld</pre></div>
 
 <blockquote>
 <p>Amazon CloudFront distribution takes up to 20 minutes to provision, therefore don’t worry<br>
 if it returns an HTTP error in the first couple of minutes.</p>
 </blockquote>
 
-<h2>What is DEEP Framework?</h2>
+<h3>Step 5. Remove Microservice(s) from Production</h3>
 
-<p>DEEP Framework is a nodejs package that is published on npmjs: <a href="https://www.npmjs.com/package/deep-framework">https://www.npmjs.com/package/deep-framework</a>.</p>
+<div class="highlight highlight-source-shell"><pre>deepify undeploy <span class="pl-k">~</span>/deep-microservices-helloworld</pre></div>
 
 <blockquote>
-<p>If you are new to node and npm, check out the tutorial <a href="http://howtonode.org/how-to-install-nodejs">how to install nodejs</a>.</p>
+<p>Amazon CloudFront distribution takes up to 20 minutes to unprovision. That's why <code>deepify</code><br>
+command checks every 30 seconds if it's disabled and when successful, removes it from your account.</p>
 </blockquote>
-
-<p>In fact, this framework is a collection of nodejs packages, also identifiable as abstracted libraries:</p>
-
-<table>
-<thead>
-<tr>
-<th><a href="https://www.npmjs.com/package/deep-framework">DEEP Framework</a></th>
-<th><a href="http://docs.deep.mg">API Docs</a></th>
-<th>Abstracted Web Service(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-asset">deep-asset</a></td>
-<td><a href="http://docs.deep.mg/deep-asset">Assets Management Library</a></td>
-<td>Amazon S3</td>
-</tr>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-cache">deep-cache</a></td>
-<td><a href="http://docs.deep.mg/deep-cache">Cache Management Library</a></td>
-<td>Amazon ElastiCache</td>
-</tr>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-core">deep-core</a></td>
-<td><a href="http://docs.deep.mg/deep-core">Core Management Library</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-db">deep-db</a></td>
-<td><a href="http://docs.deep.mg/deep-db">Database Management Library</a></td>
-<td>Amazon DynamoDB, Amazon SQS</td>
-</tr>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-di">deep-di</a></td>
-<td><a href="http://docs.deep.mg/deep-di">Dependency Injection Management Library</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-event">deep-event</a></td>
-<td><a href="http://docs.deep.mg/deep-event">Events Management Library</a></td>
-<td>Amazon Kinesis</td>
-</tr>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-fs">deep-fs</a></td>
-<td><a href="http://docs.deep.mg/deep-fs">File System Management Library</a></td>
-<td>Amazon S3</td>
-</tr>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-kernel">deep-kernel</a></td>
-<td><a href="http://docs.deep.mg/deep-kernel">Kernel Management Library</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-log">deep-log</a></td>
-<td><a href="http://docs.deep.mg/deep-log">Logs Management Library</a></td>
-<td>Amazon CloudWatch Logs</td>
-</tr>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-notification">deep-notification</a></td>
-<td><a href="http://docs.deep.mg/deep-notification">Notifications Management Library</a></td>
-<td>Amazon SNS</td>
-</tr>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-resource">deep-resource</a></td>
-<td><a href="http://docs.deep.mg/deep-resource">Resouces Management Library</a></td>
-<td>AWS Lambda, Amazon API Gateway</td>
-</tr>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-security">deep-security</a></td>
-<td><a href="http://docs.deep.mg/deep-security">Security Management Library</a></td>
-<td>AWS IAM, Amazon Cognito</td>
-</tr>
-<tr>
-<td><a href="https://www.npmjs.com/package/deep-validation">deep-validation</a></td>
-<td><a href="http://docs.deep.mg/deep-validation">Validation Management Library</a></td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-
-<h2>Who is using DEEP Framework?</h2>
-
-<p>There are couple examples / web applications that are built on top of DEEP Framework:</p>
-
-<h3>DEEP Hello World</h3>
-
-<p><a href="https://github.com/MitocGroup/deep-microservices-helloworld">DEEP Hello World</a> is a web app<br>
-that show cases a full stack example of using DEEP Microservices in the context of Platform-as-a-Service.<br>
-Developers can either fork this repository or <code>npm install deepify -g</code> and run in the command line<br>
-<code>deepify helloworld ~/deep-hello-world</code>.</p>
-
-<h3>DEEP Todo App</h3>
-
-<p><a href="https://github.com/MitocGroup/deep-microservices-todo-app">DEEP Todo App</a> is a web app inspired from <br>
-<a href="https://github.com/tastejs/todomvc/tree/master/examples/angularjs">AngularJS TodoMVC Example</a>.<br>
-It reuses AngularJS module and integrates using DEEP Framework to streamline development and deployment<br>
-using cloud-based web services.</p>
-
-<h3>DEEP Marketplace</h3>
-
-<p><a href="https://www.deep.mg">DEEP Marketplace</a> is Software-as-a-Service for enterprise software, built on top of DEEP,<br>
-that empowers customers to choose functionality from listed microservices and deploy them together as an web app<br>
-into their own AWS accounts with just few clicks; as well as empowers developers to create and publish their <br>
-microservices and monetize them in similar approach to Apple's App Store.</p>
 
 <h2>Developer Resources</h2>
 
-<p>Building an application with DEEP Framework?</p>
+<p>Having questions related to deep-framework?</p>
 
 <ul>
 <li>Ask questions: <a href="https://stackoverflow.com/questions/tagged/deep-framework">https://stackoverflow.com/questions/tagged/deep-framework</a>
 </li>
 <li>Chat with us: <a href="https://gitter.im/MitocGroup/deep-framework">https://gitter.im/MitocGroup/deep-framework</a>
 </li>
-<li>Send messages: <a href="mailto:feedback@deep.mg">feedback@deep.mg</a>
+<li>Send an email: <a href="mailto:feedback@deep.mg">feedback@deep.mg</a>
 </li>
 </ul>
 
-<p>Interested in contributing to DEEP Framework?</p>
+<p>Interested in contributing to deep-framework?</p>
 
 <ul>
 <li>Contributing: <a href="https://github.com/MitocGroup/deep-framework/blob/master/CONTRIBUTING.md">https://github.com/MitocGroup/deep-framework/blob/master/CONTRIBUTING.md</a>
 </li>
 <li>Issue tracker: <a href="https://github.com/MitocGroup/deep-framework/issues">https://github.com/MitocGroup/deep-framework/issues</a>
 </li>
+<li>Releases: <a href="https://github.com/MitocGroup/deep-framework/releases">https://github.com/MitocGroup/deep-framework/releases</a>
+</li>
 <li>Roadmap: <a href="https://github.com/MitocGroup/deep-framework/blob/master/ROADMAP.md">https://github.com/MitocGroup/deep-framework/blob/master/ROADMAP.md</a>
 </li>
-<li>Changelog: <a href="https://github.com/MitocGroup/deep-framework/blob/master/CHANGELOG.md">https://github.com/MitocGroup/deep-framework/blob/master/CHANGELOG.md</a>
+</ul>
+
+<p>Looking for web applications that use (or are similar to) deep-framework?</p>
+
+<ul>
+<li>Hello World: <a href="https://hello.deep.mg">https://hello.deep.mg</a> | <a href="https://github.com/MitocGroup/deep-microservices-helloworld">https://github.com/MitocGroup/deep-microservices-helloworld</a>
+</li>
+<li>Todo App: <a href="https://todo.deep.mg">https://todo.deep.mg</a> | <a href="https://github.com/MitocGroup/deep-microservices-todo-app">https://github.com/MitocGroup/deep-microservices-todo-app</a>
+</li>
+<li>Enterprise Software Marketplace: <a href="https://www.deep.mg">https://www.deep.mg</a>
 </li>
 </ul>
 
@@ -216,7 +150,7 @@ microservices and monetize them in similar approach to Apple's App Store.</p>
 <li><a href="https://www.deep.mg">DEEP Marketplace</a></li>
 </ul>
 
-<p>The code can be used under the MIT license:</p>
+<p>This code can be used under MIT license:</p>
 
 <blockquote>
 <p>See <a href="https://github.com/MitocGroup/deep-framework/blob/master/LICENSE">LICENSE</a> for more details.</p>
